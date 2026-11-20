@@ -1,0 +1,269 @@
+{
+  "checkedOn": "2026-11-16",
+  "method": "URL 원문을 다시 열고 HTML 본문을 직접 읽어 요약 대조했다. 백과사전은 기관 발행 참고문헌이며 원사료 자체라고 부르지 않는다. 일본 자료는 발행 기관의 문화재·연표 원문을 열었다. HTTP 200만으로 사실을 확정하지 않았다.",
+  "sources": [
+    {
+      "id": "gwon",
+      "title": "권율",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007022",
+      "status": 200,
+      "htmlSha256": "5341d36a468871167cf5e9eb6e4bf8178e80984b8edb15e02e060ab71323c7f6",
+      "rosterIds": [
+        "gwon_yul",
+        "hwang_jin",
+        "japan_kobayakawa"
+      ],
+      "summary": "이치 격퇴, 독산성 유지 뒤 일본군 철수, 행주 승전과 권율의 이동을 확인했다. 이치의 황진과 고바야카와 다카카게를 명시한다."
+    },
+    {
+      "id": "yi",
+      "title": "이순신",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044900",
+      "status": 200,
+      "htmlSha256": "41f67cd78707fa500e31ffc7822e6310d68ba7314770cf0705066313667fb9d3",
+      "rosterIds": [
+        "yi_sunsin",
+        "japan_wakizaka"
+      ],
+      "summary": "옥포·한산·명량 승전과 노량 전투·전사를 확인했다. 한산에서 와키자카 함대를 유인하여 격파했다고 설명한다."
+    },
+    {
+      "id": "kim",
+      "title": "김시민",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0009658",
+      "status": 200,
+      "htmlSha256": "fc6a9e7f0e3969c0a800abc7bc83362fe85bd12177ce5c4063a1518a2c4b77df",
+      "rosterIds": [
+        "kim_simin"
+      ],
+      "summary": "무기 제조·훈련, 1592년 진주성 공격 격퇴, 전투 중 피격을 확인했다."
+    },
+    {
+      "id": "gwak",
+      "title": "곽재우",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004695",
+      "status": 200,
+      "htmlSha256": "e290b5151c1c4956699d74be8bb44d3e9bc1ca8f3a1bda92db2e001780acfb0d",
+      "rosterIds": [
+        "gwak_jaeu",
+        "unit_militia"
+      ],
+      "summary": "정암진 도하 저지와 호남 진출 차단, 붉은 옷과 유격 전술, 정유재란 때 화왕산성을 고수하여 접근을 막았다는 본문을 확인했다."
+    },
+    {
+      "id": "samyeong",
+      "title": "유정",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0041805",
+      "status": 200,
+      "htmlSha256": "e9219d9470f322c6f9d6fad0f6c199f4242b60ab3138a727880236814ac6440e",
+      "rosterIds": [
+        "samyeong"
+      ],
+      "summary": "의승군 조직·평양성 수복 기여와 도총섭 활동, 1604년 일본 파견·포로 쇄환 논의를 확인했다."
+    },
+    {
+      "id": "sin",
+      "title": "신립",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0032901",
+      "status": 200,
+      "htmlSha256": "210f9979d7fc69230c691f133eade286bdf9a4b75eba6ca1c166f1e3feabb914",
+      "rosterIds": [
+        "sin_rip",
+        "japan_konishi",
+        "unit_ming_cavalry"
+      ],
+      "summary": "북방 공적과 기병 운용, 고니시가 선두에 선 탄금대 공격, 조선군 참패와 신립의 죽음을 확인했다."
+    },
+    {
+      "id": "song",
+      "title": "송상현",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0030855",
+      "status": 200,
+      "htmlSha256": "97860755c2612639978852afc8eca14ab56f8653b58c735c6ee419be33778903",
+      "rosterIds": [
+        "song_sanghyeon"
+      ],
+      "summary": "통행 요구 거절과 항전, 동래성 함락과 송상현의 죽음을 확인했다."
+    },
+    {
+      "id": "hwang",
+      "title": "황진",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065345",
+      "status": 200,
+      "htmlSha256": "da148d83a4004f830d546a872be32d989600be0fd3ca89081846edf741a31a84",
+      "rosterIds": [
+        "hwang_jin"
+      ],
+      "summary": "일본 사행 후 침략 대비, 이치 전투와 1593년 진주성 방어·전사를 확인했다. 성 함락은 진주성전투 항목으로 추가 대조했다."
+    },
+    {
+      "id": "jinju",
+      "title": "진주성전투",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054918",
+      "status": 200,
+      "htmlSha256": "9c3f0bec375aa8ac1b81ba38d211ef558f72ae0846b2532ce4805b1b7ad1bba0",
+      "rosterIds": [
+        "hwang_jin"
+      ],
+      "summary": "1592년 성 방어와 1593년 두 번째 전투를 구분하며, 후자의 성 함락을 확인했다."
+    },
+    {
+      "id": "haengju",
+      "title": "행주대첩",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0062859",
+      "status": 200,
+      "htmlSha256": "986ed64839acefa6198fa12670d32575a0202d0cb1a2198672282162d354a63e",
+      "rosterIds": [
+        "japan_ukita",
+        "japan_konishi"
+      ],
+      "summary": "우키타와 고니시의 공격 실패, 우키타 부상과 일본군 퇴각을 확인했다. 병력·사상자 수는 옮기지 않았다."
+    },
+    {
+      "id": "byeokjegwan",
+      "title": "벽제관전투",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022875",
+      "status": 200,
+      "htmlSha256": "1a2680eee64c6770270a36097cac3ec63c70da17e123715079de0c593b47aba7",
+      "rosterIds": [
+        "japan_konishi",
+        "japan_kobayakawa"
+      ],
+      "summary": "고니시의 평양 패퇴와 고바야카와의 서울 성 밖 대치·반격, 명군의 패퇴를 확인했다."
+    },
+    {
+      "id": "myeongnyang",
+      "title": "명량해전",
+      "publisher": "국사편찬위원회",
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i302300",
+      "status": 200,
+      "htmlSha256": "2d21f000b560bd01c758a04ddff5d915adac2ba6a05446e64cb1190e3410d4de",
+      "rosterIds": [
+        "yi_sunsin",
+        "japan_kurushima",
+        "japan_todo"
+      ],
+      "summary": "조선군 승전, 일본 수군의 패전, 구루시마 미치후사 전사와 도도 다카토라 부상을 확인했다."
+    },
+    {
+      "id": "kato",
+      "title": "松山城",
+      "publisher": "愛媛県",
+      "url": "https://www.pref.ehime.jp/ehimenotakara/08.html",
+      "status": 200,
+      "htmlSha256": "85565c20903ccdde5cce3da8d2c305a9be68aeef05c721f02462728f42b12461",
+      "rosterIds": [
+        "japan_kato_yoshiaki"
+      ],
+      "summary": "가토 요시아키의 시즈가타케 명성, 세키가하라 전공에 따른 가증과 1602년 마쓰야마성 축성을 확인했다. 동군 소속은 별도 관광기관 원문으로 대조했다."
+    },
+    {
+      "id": "katoSide",
+      "title": "加藤嘉明",
+      "publisher": "松山観光コンベンション協会",
+      "url": "https://www.mcvb.jp/kankou/detail1.php?cid=5&sid=124",
+      "status": 200,
+      "htmlSha256": "104b255cace829f9c5e250f7ca3ca91caaf9bd9ff86e47ddd55aadf98914e429",
+      "rosterIds": [
+        "japan_kato_yoshiaki"
+      ],
+      "summary": "세키가하라에서 동군에 가담하여 공을 세웠다는 명시적 서술을 확인했다."
+    },
+    {
+      "id": "nabeshima",
+      "title": "鍋島直茂宛て豊臣家五奉行連署状",
+      "publisher": "文化庁・鍋島報效会",
+      "url": "https://online.bunka.go.jp/db/heritages/detail/285126",
+      "status": 200,
+      "htmlSha256": "aea999d488e56295f06dde50451fdf0c815ce867cc84831fde4ecec72fd85378",
+      "rosterIds": [
+        "japan_nabeshima"
+      ],
+      "summary": "조선에 주둔 중인 나오시게에게 다섯 봉행이 보낸 서장이라는 소장 자료 설명을 읽었다. 특정 전투나 승전은 입증하지 않으므로 판정 유보다. 목록 날짜의 서기 1597과 설명의 1598이 달라 연도는 표시하지 않는다."
+    },
+    {
+      "id": "todo",
+      "title": "藤堂高虎略年表",
+      "publisher": "津市",
+      "url": "https://www.info.city.tsu.mie.jp/kosodate_kyouiku/kyouikuiinkai/1004357/1004663/1004713/1004738.html",
+      "status": 200,
+      "htmlSha256": "1f4766ff062d643e7da1a42ca170c3176f6e22fa424640d87462c4eb894ad9af",
+      "rosterIds": [
+        "japan_todo"
+      ],
+      "summary": "수군 지휘, 세키가하라 동군 소속과 승전, 이마바리성과 쓰성 축성을 확인했다. 명량의 패전은 국사편찬위원회 자료로 별도 대조했다."
+    },
+    {
+      "id": "weapons",
+      "title": "무기",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023081",
+      "status": 200,
+      "htmlSha256": "8c197bcf40bf55dcb4cce5e333cbfed084e81022d8c9e92c93b62ea7ebf4140b",
+      "rosterIds": [
+        "unit_spearman",
+        "unit_archer"
+      ],
+      "summary": "궁시와 창의 용도에 관한 병기 설명을 확인했다. 일반 병종 카드에 특정 인물·부대의 전공을 연결하지 않는다."
+    },
+    {
+      "id": "monk",
+      "title": "처영",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055712",
+      "status": 200,
+      "htmlSha256": "f04486c68f20e4aa55fc5bd2d35b91d4607b167c48ff5c95556a3a26d886e179",
+      "rosterIds": [
+        "unit_monk"
+      ],
+      "summary": "임진왜란의 의승군 조직과 처영의 활동을 확인했다. 일반 승병 카드에는 처영 개인의 전투 성과를 부여하지 않는다."
+    },
+    {
+      "id": "hwacha",
+      "title": "화차",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064882",
+      "status": 200,
+      "htmlSha256": "7a82c678dd0437e3c6dc41128011cbad8685e9f152283c2c711f7e9bfd7030e4",
+      "rosterIds": [
+        "unit_hwacha"
+      ],
+      "summary": "수레 위에 다수의 화기를 설치한 병기의 구조를 확인했다."
+    },
+    {
+      "id": "cannon",
+      "title": "천자총통",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056009",
+      "status": 200,
+      "htmlSha256": "a67229498ac3a237a48d39dc2ccdd5154de2a2fc072ed3104161e161434c5123",
+      "rosterIds": [
+        "unit_chongtong"
+      ],
+      "summary": "총통의 종류와 화약, 탄환·대장군전 발사를 확인했다. 수치와 개인 전공은 옮기지 않았다."
+    },
+    {
+      "id": "ship",
+      "title": "판옥선",
+      "publisher": "한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059680",
+      "status": 200,
+      "htmlSha256": "b2f51fc17b12a54ebd05f02dc27ba217982c88a7334f4db4a00c8d71a00a9992",
+      "rosterIds": [
+        "unit_panokseon"
+      ],
+      "summary": "상장을 올린 전선의 구조와 상갑판 전투 공간을 확인했다."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "origin": "Native image edit using the Japanese battle infantry and ledger 914 artwork as references. Approved lineup figure 5, candidate B, resampled to 30px tall in two 32×32 cells.",
+  "sourceImage": "ig_057d8f8c22d4584e016afe885b1ce887d0b66fd26543e26acf.png",
+  "sourceSha256": "c4546532acbadebdc9707770b9e9c5cc2e6d387c8d298427417941bc5b90e49a",
+  "art": {
+    "units/cavalry.png": "5ea29f5d807e7ba6bc2f06d874a3268937c2b34ba9754a952fe506a79d7715a1",
+    "units/cavalry_enemy.png": "f846bce1b37ad6d215ebcde25748ba8589ac37070e52abe392dd37736966d45a"
+  }
+}

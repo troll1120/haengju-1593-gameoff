@@ -1,0 +1,30 @@
+/* Hanji pixel skin (A). An override layer: it repaints panels and buttons and never moves a box. Every frame is a 9-slice
+   drawn inside the element's own border box (outset 0) at two screen pixels per art pixel. Clearing data-skin on <html>
+   restores the unskinned look. */
+:root {
+  --skin-window: url("./assets/ui-skin/window-filled.png"); --skin-window-cut: 10 fill / 20px / 0 repeat;
+  --skin-button: url("./assets/ui-skin/button-normal.png"); --skin-button-primary: url("./assets/ui-skin/button-primary.png");
+  --skin-button-active: url("./assets/ui-skin/button-active.png"); --skin-button-disabled: url("./assets/ui-skin/button-disabled.png");
+  --skin-button-cut: 8 fill / 16px / 0 stretch;
+}
+/* Result, pause, the first-battle guide and sortie, which also hosts the upgrade web, are the panels. */
+[data-skin="hanji"] .panel,
+[data-skin="hanji"] .result-unlock-modal { border-image: var(--skin-window) var(--skin-window-cut); }
+/* The title menu and the buttons inside those panels. */
+[data-skin="hanji"] .menu-button,
+[data-skin="hanji"] .panel .icon-button { border-image: var(--skin-button) var(--skin-button-cut); }
+[data-skin="hanji"] .panel .icon-button[aria-pressed="true"] { border-image-source: var(--skin-button-active); }
+[data-skin="hanji"] .menu-button.primary,
+[data-skin="hanji"] #resume,
+[data-skin="hanji"] .bph-web .bph-web-buy { border-image: var(--skin-button-primary) var(--skin-button-cut); }
+[data-skin="hanji"] .bph-web .bph-web-buy { color: var(--cream); }
+[data-skin="hanji"] .bph-web .bph-web-buy:disabled { border-image-source: var(--skin-button-disabled); color: var(--ink); }
+/* A piece carries its own face and edge, so the painted background and the soft shadow under it come off. */
+[data-skin="hanji"] .panel,
+[data-skin="hanji"] .result-unlock-modal,
+[data-skin="hanji"] .menu-button,
+[data-skin="hanji"] .menu-button.primary,
+[data-skin="hanji"] .panel .icon-button,
+[data-skin="hanji"] #resume,
+[data-skin="hanji"] .bph-web .bph-web-buy,
+[data-skin="hanji"] .bph-web .bph-web-buy:disabled { background: none; box-shadow: none; image-rendering: pixelated; }

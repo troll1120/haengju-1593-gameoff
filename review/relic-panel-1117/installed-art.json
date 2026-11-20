@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "origin": "project-authored relic artwork with the lead-requested sandals readability refinement",
+  "sourceCommit": "9ed5902c7512518ae78a5a0d774dc1d09bca8eaf",
+  "generator": "scripts/relic-art.ts",
+  "art": {
+    "relics/R_HeroMoveSpeed.png": "5e07cf366193be7ab0799307e2ff681ed3908fd14a944f77595fe3d882794702",
+    "relics/Relic2_Nature_TalkingBeet.png": "a91b8f236eff1f5a52691b1a5698ce86e4e6a20a3379c1cc068c0b4199b9f3ab",
+    "relics/Relic1_GiantsMight.png": "867082fd773bd101657594055dcd0dc865cdbd1d8aa4eea7ac1f6759d324107d",
+    "relics/Relic1_TomeDuration.png": "5f7d262b5d4752417e8c64002c39f858cda3a310fd5d4e02a038d16cf05ad4dc",
+    "relics/R_AutomaticBallista.png": "7ef53f69dbd40a3e9a8b02f2b9ea1cdf3df29b1dda8148e730c9b12030d9ab2e",
+    "relics/Relic1_FourLeafClover.png": "654f553e1dc617e748ea619189eb392cdf186b817ccf98729346959327791278",
+    "relics/Relic1_CharmWarrior.png": "008cf447fdc94a7d7d2b54ac72732cc2c107c702aad6dc567c752fffb4a4dc49",
+    "relics/Relic1_Club.png": "b08caa1b3c484104da9b96066d0b2e3c7354e7b231f789e88b5cf9261efcf90c",
+    "relics/Relic1_Rapier.png": "efbc02b7400ea3d0019273e93a68d1a6808c527add4a1a1127ca06e072e45f91"
+  }
+}

@@ -1,0 +1,709 @@
+{
+  "unit_militia": {
+    "name": "의병",
+    "side": "조선",
+    "text": "고장을 지키려 스스로 모인 군대다. 곽재우 등의 지휘 아래 왜군의 진격과 보급을 막았다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0047674",
+      "https://encykorea.aks.ac.kr/Article/E0004695"
+    ],
+    "ref": "추가 요청"
+  },
+  "unit_chongtong": {
+    "name": "총통 포병",
+    "side": "조선",
+    "text": "천자총통·지자총통 같은 화포를 다루는 조선 병사다. 성벽의 포루에서 큰 화살이나 탄환을 쏘아 다가오는 적을 막았다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0056009",
+      "https://encykorea.aks.ac.kr/Article/E0054337",
+      "https://contents.history.go.kr/mobile/km/view.do?levelId=km_007_0050_0020_0020",
+      "https://www.suwon.re.kr/data/file/town/3535263116_ZksRji1n_9e6aeecb66862cdf198eed744ea6454fc22c7295.pdf"
+    ],
+    "ref": "추가 요청"
+  },
+  "gwon_yul": {
+    "name": "권율",
+    "side": "조선",
+    "years": "1537~1599",
+    "title": "행주산성 대첩의 총지휘관",
+    "battles": "이치 전투, 독산성, 행주산성(1593)",
+    "end": "1599년 사망. 노환으로 관직을 사임하고 고향으로 돌아갔다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0007022"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": true
+  },
+  "yi_sunsin": {
+    "name": "이순신",
+    "side": "조선",
+    "years": "1545~1598",
+    "title": "삼도수군통제사",
+    "battles": "옥포, 한산도, 명량, 노량 해전",
+    "end": "전사. 노량 해전에서 총탄을 맞고 '내 죽음을 알리지 말라' 했다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0044900"
+    ],
+    "rosterRef": "추가 승인",
+    "priority": true
+  },
+  "kim_simin": {
+    "name": "김시민",
+    "side": "조선",
+    "years": "1554~1592",
+    "title": "진주목사, 1차 진주성 대첩의 주역",
+    "battles": "1차 진주성 전투(1592)",
+    "end": "전사. 진주성 전투에서 이마에 총탄을 맞고 며칠 뒤 숨졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0009658"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": true
+  },
+  "gwak_jaeu": {
+    "name": "곽재우",
+    "side": "조선",
+    "years": "1552~1617",
+    "title": "붉은 옷의 홍의장군, 첫 의병장 중 하나",
+    "battles": "정암진 전투, 화왕산성",
+    "end": "1617년 사망. 벼슬을 거듭 사양하고 은거했다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0004695"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": true
+  },
+  "samyeong": {
+    "name": "사명대사(유정)",
+    "side": "조선",
+    "years": "1544~1610",
+    "title": "승병장, 1604년 일본에 파견된 사신",
+    "battles": "평양성 탈환(1593)",
+    "end": "입적. 1610년 해인사에서 생을 마쳤다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0041805",
+      "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n307900"
+    ],
+    "rosterRef": "추가 승인",
+    "priority": true
+  },
+  "sin_rip": {
+    "name": "신립",
+    "side": "조선",
+    "years": "1546~1592",
+    "title": "삼도순변사, 북방의 명장",
+    "battles": "충주 탄금대 전투(1592)",
+    "end": "자결. 배수진이 무너지자 남한강에 몸을 던졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0032901"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": true
+  },
+  "song_sanghyeon": {
+    "name": "송상현",
+    "side": "조선",
+    "years": "1551~1592",
+    "title": "동래부사, '싸워 죽기는 쉬워도 길을 빌려주긴 어렵다'",
+    "battles": "동래성 전투(1592)",
+    "end": "순절. 성이 무너지자 관복을 입고 앉은 채 죽음을 맞았다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0030855"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": true
+  },
+  "hwang_jin": {
+    "name": "황진",
+    "side": "조선",
+    "years": "1550~1593",
+    "title": "이치에서 호남을 지킨 맹장",
+    "battles": "이치 전투, 2차 진주성 전투(1593)",
+    "end": "전사. 2차 진주성에서 총탄을 맞고 쓰러졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0065345",
+      "https://encykorea.aks.ac.kr/Article/E0054918",
+      "https://encykorea.aks.ac.kr/Article/E0007022"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": true
+  },
+  "cheoyeong": {
+    "name": "처영",
+    "side": "조선",
+    "years": "미상",
+    "title": "서산대사의 제자, 행주의 승병장",
+    "battles": "행주산성(1593), 이치 전투",
+    "end": "미상. 확인한 출처에는 사망 경위가 없다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0055712"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": false
+  },
+  "jo_heon": {
+    "name": "조헌",
+    "side": "조선",
+    "years": "1544~1592",
+    "title": "옥천의 의병장",
+    "battles": "청주성 수복, 금산 전투(1592)",
+    "end": "전사. 금산에서 700 의병과 함께 모두 쓰러졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0052754"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": false
+  },
+  "yi_boknam": {
+    "name": "이복남",
+    "side": "조선",
+    "years": "미상~1597",
+    "title": "전라병사, 남원성 수비 장수",
+    "battles": "웅치 전투, 남원성 전투(1597)",
+    "end": "전사. 정유재란 때 남원성이 함락되며 싸우다 죽었다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0044443",
+      "https://encykorea.aks.ac.kr/Article/E0050061"
+    ],
+    "rosterRef": "roster.ts:2",
+    "priority": false
+  },
+  "jeong_bal": {
+    "name": "정발",
+    "side": "조선",
+    "years": "1553~1592",
+    "title": "부산진 첨사, 임진왜란 첫 전투의 장수",
+    "battles": "부산진성 전투(1592)",
+    "end": "전사. 부산진성에서 싸우다 성이 함락되며 숨졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0050228"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "sin_gak": {
+    "name": "신각",
+    "side": "조선",
+    "years": "미상~1592",
+    "title": "부원수, 조선 육군 첫 승리의 장수",
+    "battles": "한강 방어, 양주 해유령 전투(1592)",
+    "end": "처형. 한강에서 이탈했다는 장계로 승전 직후 억울하게 참수됐다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0032600"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "kim_myeongwon": {
+    "name": "김명원",
+    "side": "조선",
+    "years": "1534~1602",
+    "title": "도원수, 한강·임진강 방어 총책",
+    "battles": "한강 방어, 임진강 전투(1592)",
+    "end": "병사. 전쟁 뒤 좌의정까지 지내고 숨졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0047674",
+      "https://ko.wikipedia.org/wiki/김명원"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "kim_yeomul": {
+    "name": "김여물",
+    "side": "조선",
+    "years": "1548~1592",
+    "title": "신립의 종사관",
+    "battles": "충주 탄금대 전투(1592)",
+    "end": "자결. 탄금대에서 싸우다 패하자 강에 몸을 던졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0009798"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "jeong_dam": {
+    "name": "정담",
+    "side": "조선",
+    "years": "미상~1592",
+    "title": "김제군수, 웅치를 막은 장수",
+    "battles": "웅치 전투(1592)",
+    "end": "전사. 웅치 고개를 지키다 부하들과 함께 쓰러졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0050061"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "no_gaebang": {
+    "name": "노개방",
+    "side": "조선",
+    "years": "1563~1592",
+    "title": "동래향교 교수, 붓 대신 칼을 든 선비",
+    "battles": "동래성 전투(1592)",
+    "end": "순절. 고향에 있다가 동래성으로 돌아와 함께 죽었다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0012630"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "yeonggyu": {
+    "name": "영규",
+    "side": "조선",
+    "years": "미상~1592",
+    "title": "청주성과 금산에서 싸운 승병장",
+    "battles": "청주성 수복, 금산 전투(1592)",
+    "end": "전사. 금산에서 조헌과 함께 쓰러졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0037243"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "li_rusong": {
+    "name": "이여송",
+    "side": "명",
+    "years": "1549~1598",
+    "title": "명나라 제독, 원군 총사령관",
+    "battles": "평양성 탈환, 벽제관 전투(1593)",
+    "end": "전사. 귀국 뒤 요동에서 몽골군과 싸우다 죽었다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0047677",
+      "https://contents.history.go.kr/mobile/km/view.do?levelId=km_007_0060_0030_0010_0020",
+      "https://ko.wikipedia.org/wiki/이여송"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "yi_jeongheon": {
+    "name": "이정헌",
+    "side": "조선",
+    "years": "미상~1592",
+    "title": "부산진 조방장, 정발의 참모",
+    "battles": "부산진성 전투(1592)",
+    "end": "전사. 부산진성에서 정발과 함께 싸우다 죽었다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0030655",
+      "https://www.grandculture.net/busan/toc/GC04203930",
+      "https://ko.wikipedia.org/wiki/이정헌_(조선)"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "kim_hisu": {
+    "name": "김희수",
+    "side": "조선",
+    "years": "미상~1592",
+    "title": "동래성에서 항전한 비장",
+    "battles": "동래성 전투(1592)",
+    "end": "순절. 동래성에서 군민과 함께 항전하다 숨졌다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0030655",
+      "https://encykorea.aks.ac.kr/Article/E0075665",
+      "https://www.grandculture.net/busan/toc/GC04203878"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "song_bongsu": {
+    "name": "송봉수",
+    "side": "조선",
+    "years": "미상~1592",
+    "title": "동래부사 송상현의 비장",
+    "battles": "동래성 전투(1592)",
+    "end": "순절. 적이 송상현에게 다가오자 맞서 싸우다 죽었다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0030655",
+      "https://encykorea.aks.ac.kr/Article/E0075665",
+      "https://www.grandculture.net/busan/toc/GC04203319"
+    ],
+    "rosterRef": "roster.ts:3",
+    "priority": false
+  },
+  "seosan": {
+    "name": "서산대사(휴정)",
+    "side": "조선",
+    "years": "1520~1604",
+    "title": "팔도선교도총섭, 전국 승병의 우두머리",
+    "battles": "평양성 탈환 지원(1593)",
+    "end": "입적. 1604년 묘향산 원적암에서 생을 마쳤다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0065860",
+      "https://encykorea.aks.ac.kr/Article/E0047674"
+    ],
+    "rosterRef": "추가 승인",
+    "priority": false
+  },
+  "unit_spearman": {
+    "name": "창병",
+    "side": "조선",
+    "text": "창을 든 보병이다. 자루 끝의 날로 적을 찌르는 근접전을 맡았다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0023081"
+    ],
+    "ref": "rules.ts:35"
+  },
+  "unit_archer": {
+    "name": "궁수",
+    "side": "조선",
+    "text": "각궁 등 활로 싸우는 병사다. 행주에서는 성 안에서 활을 쏘아 왜군을 막았다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0023081",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "ref": "rules.ts:35"
+  },
+  "unit_monk": {
+    "name": "승병",
+    "side": "조선",
+    "text": "절에서 모인 스님 군대다. 처영의 승병은 행주산성 한쪽을 맡아 싸웠다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0055712",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "ref": "rules.ts:35"
+  },
+  "unit_ming_cavalry": {
+    "name": "기병",
+    "side": "조선·명",
+    "text": "말을 타고 싸우는 병사다. 조선의 신립과 명의 이여송도 기병을 이끌었다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0032901",
+      "https://contents.history.go.kr/mobile/km/view.do?levelId=km_007_0060_0030_0010_0020"
+    ],
+    "ref": "rules.ts:35"
+  },
+  "unit_hwacha": {
+    "name": "화차병",
+    "side": "조선",
+    "text": "수레 위에 여러 총통을 얹은 화기를 다뤘다. 행주에서는 변이중이 만든 화차가 활약했다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0064882",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "ref": "rules.ts:35"
+  },
+  "unit_panokseon": {
+    "name": "판옥선",
+    "side": "조선",
+    "text": "2층 갑판을 올린 조선 수군 주력선이다. 높은 갑판에서 화포를 쏘아 왜선을 부쉈다.",
+    "sourceUrls": [
+      "https://encykorea.aks.ac.kr/Article/E0059680",
+      "https://encykorea.aks.ac.kr/Article/E0023081"
+    ],
+    "ref": "rules.ts:35"
+  },
+  "unit_yari": {
+    "name": "창병(아시가루)",
+    "side": "일본",
+    "text": "일본 하급 보병이다. 긴 창을 맞대고 줄지어 밀고 들어왔다.",
+    "ref": "rules.ts:60"
+  },
+  "unit_teppo": {
+    "name": "조총병",
+    "side": "일본",
+    "text": "화승총을 쏘는 보병이다. 줄을 바꿔가며 쏘아 조선군을 크게 괴롭혔다.",
+    "ref": "rules.ts:60"
+  },
+  "unit_samurai": {
+    "name": "무사",
+    "side": "일본",
+    "text": "갑옷을 갖춘 사무라이다. 칼과 창으로 앞장서 돌격했다.",
+    "ref": "rules.ts:60"
+  },
+  "unit_cavalry": {
+    "name": "기병",
+    "side": "일본",
+    "text": "말 탄 무사다. 수는 적었지만 빠르게 측면을 노렸다.",
+    "ref": "rules.ts:60"
+  },
+  "unit_guard": {
+    "name": "호위병",
+    "side": "일본",
+    "text": "대장 곁을 지키는 정예 병사다.",
+    "ref": "rules.ts:60"
+  },
+  "unit_ship": {
+    "name": "왜선",
+    "side": "일본",
+    "text": "세키부네 같은 일본 배다. 가까이 붙어 넘어오는 백병전을 노렸다.",
+    "ref": "rules.ts:60"
+  },
+  "unit_ukita": {
+    "name": "우키타 히데이에",
+    "side": "일본 · 1572~1655 · 행주를 공격한 왜군 총대장",
+    "text": "주요 전투: 행주산성 공격(1593), 2차 진주성\n최후: 병사. 세키가하라 패배 뒤 하치조지마에 유배돼 오래 살다 숨졌다.",
+    "ref": "rules.ts:60"
+  },
+  "japan_ukita": {
+    "name": "우키타 히데이에",
+    "side": "japan",
+    "years": "1572~1655(1573년생 설도 있음)",
+    "title": "행주 공격군의 총지휘관",
+    "battles": "행주산성 공격(1593), 세키가하라",
+    "end": "1655년 사망. 세키가하라 패전 뒤 하치조지마에 유배되어 그곳에서 생을 마쳤다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/宇喜多秀家",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "rosterRef": "bosses.ts:9; rules.ts:60",
+    "gameStatus": "existing_boss",
+    "gameId": "ukita",
+    "haengjuRole": "core",
+    "replaces": "unit_ukita",
+    "verificationNote": "출생 1572·1573년 설을 병기. 구 항목의 의학적 사인 '병사'는 미입증이므로 새 정규안에서 제외.",
+    "release": true
+  },
+  "japan_konishi": {
+    "name": "고니시 유키나가",
+    "side": "japan",
+    "years": "미상~1600",
+    "title": "임진왜란 선봉에 선 무장, 강화 교섭에도 참여",
+    "battles": "평양성, 행주산성 공격(1593), 세키가하라",
+    "end": "처형. 세키가하라에서 패한 뒤 붙잡혀 1600년 처형되었다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/小西行長",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "rosterRef": "bosses.ts:6",
+    "gameStatus": "existing_boss",
+    "gameId": "konishi",
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "core",
+    "verificationNote": "출생은 코토방크 사전 간 미상·1558년설이 공존하므로 미상으로 표기.",
+    "release": true
+  },
+  "japan_wakizaka": {
+    "name": "와키자카 야스하루",
+    "side": "japan",
+    "years": "1554~1626",
+    "title": "임진왜란에 수군을 이끌고 참전한 무장",
+    "battles": "시즈가타케, 한산도 해전(1592), 세키가하라",
+    "end": "1626년 사망. 전쟁 뒤 이요 오즈의 영주를 지냈다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/脇坂安治",
+      "https://ko.wikipedia.org/wiki/한산도_대첩"
+    ],
+    "rosterRef": "bosses.ts:7",
+    "gameStatus": "existing_boss",
+    "gameId": "wakizaka",
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "war_context",
+    "release": true
+  },
+  "japan_kobayakawa": {
+    "name": "고바야카와 다카카게",
+    "side": "japan",
+    "years": "1533~1597",
+    "title": "모리 가문을 보좌하고 도요토미 정권에 참여한 무장",
+    "battles": "규슈 정벌, 벽제관 전투(1593)",
+    "end": "1597년 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/小早川隆景",
+      "https://encykorea.aks.ac.kr/Article/E0062859",
+      "https://ja.wikipedia.org/wiki/幸州山城の戦い"
+    ],
+    "rosterRef": "bosses.ts:8",
+    "gameStatus": "existing_boss",
+    "gameId": "kobayakawa",
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "source_disagreement",
+    "verificationNote": "행주 참전은 AKS에 명시되나 일본어 위키백과의 참전 명단과 차이가 있어 합의로 단정하지 않음. 히데아키와 별개 인물.",
+    "release": true
+  },
+  "japan_kato_yoshiaki": {
+    "name": "가토 요시아키",
+    "side": "japan",
+    "years": "1563~1631(1562년생 설도 있음)",
+    "title": "임진왜란에 수군을 지휘한 무장",
+    "battles": "시즈가타케, 안골포 해전, 세키가하라",
+    "end": "1631년 에도에서 사망. 말년에는 아이즈의 영주를 지냈다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/加藤嘉明-15718"
+    ],
+    "rosterRef": "bosses.ts:10",
+    "gameStatus": "existing_boss",
+    "gameId": "kato_yoshiaki",
+    "haengjuRole": "war_context",
+    "verificationNote": "기요마사와 다른 인물. 코토방크 사전 간 1562·1563년 출생 이견을 병기.",
+    "release": true
+  },
+  "japan_kurushima": {
+    "name": "구루시마 미치후사",
+    "side": "japan",
+    "years": "1561~1597",
+    "title": "이요 구루시마 출신의 수군 장수",
+    "battles": "시코쿠 정벌, 명량 해전(1597)",
+    "end": "전사. 1597년 명량 해전에서 싸우다 숨졌다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/来島通総",
+      "https://ja.wikipedia.org/wiki/来島通総",
+      "https://encykorea.aks.ac.kr/Article/E0018250"
+    ],
+    "rosterRef": "bosses.ts:11",
+    "gameStatus": "existing_boss",
+    "gameId": "kurushima",
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "war_context",
+    "verificationNote": "소스는 성씨만 지정. 미치유키 등 동성 인물과의 구별은 도감 대응 제안.",
+    "release": true
+  },
+  "japan_nabeshima": {
+    "name": "나베시마 나오시게",
+    "side": "japan",
+    "years": "1538~1618",
+    "title": "히젠 사가 세력을 이끈 무장",
+    "battles": "임진왜란 출전",
+    "end": "1618년 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/鍋島直茂"
+    ],
+    "rosterRef": "bosses.ts:12",
+    "gameStatus": "existing_boss",
+    "gameId": "nabeshima",
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "war_context",
+    "verificationNote": "나오시게·가쓰시게 중 게임의 전체 이름은 미지정. 이번에 읽은 본문으로 입증하지 못한 은거 시점은 생략.",
+    "release": true
+  },
+  "japan_todo": {
+    "name": "도도 다카토라",
+    "side": "japan",
+    "years": "1556~1630",
+    "title": "임진왜란 수군 지휘관, 뒤에 이세 쓰의 영주",
+    "battles": "세키가하라, 오사카 전투",
+    "end": "1630년 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/藤堂高虎"
+    ],
+    "rosterRef": "bosses.ts:13",
+    "gameStatus": "existing_boss",
+    "gameId": "todo",
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "war_context",
+    "release": true
+  },
+  "japan_so_yoshitoshi": {
+    "name": "소 요시토시",
+    "side": "japan",
+    "years": "1568~1615",
+    "title": "쓰시마의 영주, 조선과의 외교 교섭 담당",
+    "battles": "임진왜란·정유재란 출전",
+    "end": "1615년 쓰시마에서 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/宗義智"
+    ],
+    "rosterRef": "enemy-animation.ts:6,9-10; main.ts:50",
+    "gameStatus": "existing_art_mapping",
+    "gameId": "so_yoshitoshi",
+    "haengjuRole": "war_context",
+    "verificationNote": "호위병과 구형 기병 보스 그래픽의 이름. 현재 BOSS_IDS에는 없음.",
+    "release": false
+  },
+  "japan_ishida": {
+    "name": "이시다 미쓰나리",
+    "side": "japan",
+    "years": "1560~1600",
+    "title": "도요토미 정권의 행정과 군무를 맡은 봉행",
+    "battles": "행주산성 공격(1593), 세키가하라",
+    "end": "처형. 세키가하라 패전 뒤 붙잡혀 1600년 교토에서 처형되었다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/石田三成",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "rosterRef": "assets/hitfx/ishida_side_attack_0_fx.png (바이너리: 행 없음)",
+    "gameStatus": "proposal_asset_only",
+    "gameId": null,
+    "haengjuRole": "core",
+    "release": false
+  },
+  "japan_kato_kiyomasa": {
+    "name": "가토 기요마사",
+    "side": "japan",
+    "years": "1562~1611",
+    "title": "조선에 출전한 도요토미 휘하 무장, 구마모토의 영주",
+    "battles": "시즈가타케, 울산성 전투",
+    "end": "1611년 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/加藤清正"
+    ],
+    "rosterRef": "assets/hitfx/kato_side_attack_0_fx.png (바이너리: 행 없음)",
+    "gameStatus": "proposal_asset_only",
+    "gameId": null,
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "war_context",
+    "verificationNote": "kato 효과 자산만 있으며 실행 코드 연결 없음. kato_yoshiaki 보스와 구별. 행주 현장 참전은 이번 조사에서 미입증.",
+    "release": false
+  },
+  "japan_kuroda": {
+    "name": "구로다 나가마사",
+    "side": "japan",
+    "years": "1568~1623",
+    "title": "임진왜란에 참전하고 뒤에 후쿠오카의 영주가 된 무장",
+    "battles": "행주산성 공격(1593), 세키가하라",
+    "end": "병사. 1623년 교토에 머물던 중 숨졌다.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/黒田長政",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "rosterRef": "assets/hitfx/kuroda_side_attack_0_fx.png (바이너리: 행 없음)",
+    "gameStatus": "proposal_asset_only",
+    "gameId": null,
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "core",
+    "release": false
+  },
+  "japan_kikkawa": {
+    "name": "깃카와 히로이에",
+    "side": "japan",
+    "years": "1561~1625",
+    "title": "모리 가문을 보좌한 무장, 이와쿠니 깃카와 가문의 시조",
+    "battles": "행주산성 공격(1593), 임진왜란·정유재란 출전",
+    "end": "1625년 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/吉川広家",
+      "https://encykorea.aks.ac.kr/Article/E0062859"
+    ],
+    "rosterRef": "assets/hitfx/kikkawa_side_attack_0_fx.png (바이너리: 행 없음)",
+    "gameStatus": "proposal_asset_only",
+    "gameId": null,
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "core",
+    "release": false
+  },
+  "japan_shimazu": {
+    "name": "시마즈 요시히로",
+    "side": "japan",
+    "years": "1535~1619",
+    "title": "사쓰마 시마즈 가문의 무장",
+    "battles": "사천 전투, 세키가하라",
+    "end": "1619년 사망.",
+    "sourceUrls": [
+      "https://kotobank.jp/word/島津義弘"
+    ],
+    "rosterRef": "assets/hitfx/shimazu_side_attack_0_fx.png (바이너리: 행 없음)",
+    "gameStatus": "proposal_asset_only",
+    "gameId": null,
+    "identityStatus": "proposed_full_name",
+    "haengjuRole": "war_context",
+    "release": false
+  },
+  "japan_hideyoshi": {
+    "name": "도요토미 히데요시",
+    "side": "japan",
+    "years": "1537~1598(1536년생 설도 있음)",
+    "title": "일본을 통일하고 조선 침략을 명령한 통치자",
+    "battles": "야마자키, 시즈가타케, 오다와라 정벌",
+    "end": "병사. 조선과의 전쟁이 이어지던 1598년 숨졌다.",
+    "sourceUrls": [
+      "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303410",
+      "https://kotobank.jp/word/豊臣秀吉"
+    ],
+    "rosterRef": null,
+    "gameStatus": "proposal",
+    "gameId": null,
+    "haengjuRole": "overall_ruler",
+    "verificationNote": "우리역사넷은 1537년, 코토방크 일부 사전은 1536년 출생. 일본에서 전쟁을 지시한 통치자이며 행주 현장 지휘관으로 넣지 않음.",
+    "release": false
+  }
+}

@@ -1,0 +1,129 @@
+.bph-codex.panel {
+  /* One step under --type-fine, only for a card name the two-line label would otherwise cut. */
+  --type-small: 13px;
+  container-type: inline-size;
+  display: grid; grid-template-rows: auto minmax(0, 1fr); gap: var(--space-3);
+  width: 100%; height: 100%; max-width: none; max-height: none; overflow: hidden;
+}
+.bph-codex-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
+.bph-codex-head h1 { margin: 0; font-size: var(--type-label); font-weight: 400; }
+.bph-codex-count { flex: 1; margin: 0; color: var(--wood); font-variant-numeric: tabular-nums; }
+.bph-codex-preview { order: 1; flex: 1 0 100%; padding: 0 var(--space-1); background: var(--red-deep); color: var(--cream); font-size: var(--type-fine); text-align: center; }
+
+.bph-codex-book { display: grid; grid-template-rows: fit-content(56%) minmax(0, 1fr); gap: var(--space-3); min-height: 0; }
+.bph-codex-index { display: grid; grid-template-rows: auto auto auto minmax(0, 1fr); gap: var(--space-2); min-height: 0; }
+.bph-codex-tabs, .bph-codex-classes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-1); }
+.bph-codex-tabs button, .bph-codex-class {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-1);
+  min-width: 0; min-height: 44px; padding: var(--space-1); border-width: var(--line); font-size: var(--type-fine);
+}
+.bph-codex-tabs [aria-selected="true"], .bph-codex-class[aria-selected="true"] { background: var(--red-deep); border-color: var(--wood-dark); color: var(--cream); }
+.bph-codex-class { font-variant-numeric: tabular-nums; }
+.bph-codex-class .bph-codex-art { --art: 32px; --art-height: 32px; }
+.bph-codex-class[data-complete="true"]:not([aria-selected="true"]) { background: var(--gold-light); }
+.bph-codex-group { margin: 0; color: var(--red-deep); }
+:lang(en) .bph-codex-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.bph-codex-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); grid-auto-rows: max-content; gap: var(--space-2); align-content: start;
+  min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: var(--line);
+  scrollbar-width: thin; scrollbar-color: var(--wood) var(--paper);
+}
+.bph-codex-card {
+  position: relative; display: grid; justify-items: center; align-content: start; gap: var(--space-1);
+  min-width: 0; padding: var(--space-1) var(--line) var(--space-2); border-width: var(--line); background: var(--paper-light);
+}
+.bph-codex-card[data-discovered="false"] { background: var(--paper-shade); color: var(--wood-dark); }
+:lang(en) .bph-codex-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: var(--space-1); }
+:lang(en) .bph-codex-card { padding-inline: 0; }
+:lang(en) .bph-codex-label { word-break: normal; overflow-wrap: break-word; }
+.bph-codex-card[aria-pressed="true"] { background: var(--gold); border-color: var(--wood-dark); }
+.bph-codex-label {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  max-width: 100%; line-height: 1.25; text-align: center; word-break: keep-all; overflow-wrap: anywhere;
+}
+.bph-codex-label.is-long { font-size: var(--type-small); }
+/* An English name can run to three words. One that stepped down gets a third line, and every English card keeps room for three such lines, so cards and rows stay one height. */
+:lang(en) .bph-codex-label { --name-line: var(--type-fine); min-height: calc(3 * var(--name-line)); }
+:lang(en) .bph-codex-label.is-long { -webkit-line-clamp: 3; line-height: var(--name-line); }
+.bph-codex-unread { position: absolute; top: var(--space-1); right: var(--space-1); width: var(--space-2); height: var(--space-2); background: var(--red); box-shadow: 0 0 0 var(--line) var(--cream); }
+.bph-codex-foil { position: absolute; top: var(--space-1); left: var(--space-1); }
+#app .bph-codex-card img[src*="/art/icons/"]:is(.bph-codex-foil, .bph-codex-rarity img) { --art-scale: .5; }
+.bph-codex-rarity { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--hair); }
+.bph-codex-rarity span { margin-left: var(--space-1); }
+
+/* Every card figure is drawn at one scale and stands on the cell's bottom edge; 84px holds the tallest, a 42px full-body commander at 2x. */
+.bph-codex-art { --art: 64px; --art-height: 84px; position: relative; display: block; flex: none; width: var(--art); height: var(--art-height); overflow: hidden; }
+.bph-codex-art img { position: absolute; left: 0; top: 0; max-width: none; }
+/* The widest figure is 4px wider than the cell and uses the card's side padding rather than losing a pixel column. */
+.bph-codex-art[data-art="sprite"] { display: flex; align-items: flex-end; justify-content: center; overflow: visible; }
+.bph-codex-sprite { position: relative; display: block; flex: none; overflow: hidden; }
+.bph-codex-sprite img { transform-origin: 0 0; image-rendering: pixelated; }
+.bph-codex-art[data-art="image"] img { top: auto; right: 0; bottom: 0; margin-inline: auto; width: var(--art); height: var(--art); object-fit: contain; }
+.bph-codex .bph-codex-art[data-art="unknown"] {
+  display: grid; place-items: center; background: var(--wood-dark); box-shadow: inset 0 0 0 var(--line) var(--ink);
+  color: var(--paper-shade); font-size: calc(var(--art) * .75); line-height: 1;
+}
+#app .bph-codex-art img[src*="/art/icons/"] { --art-scale: 2; }
+#app :is(.bph-codex-class, .bph-codex-milestones) .bph-codex-art img[src*="/art/icons/"] { --art-scale: 1; }
+
+.bph-codex-page {
+  display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--space-3); min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  /* Korean breaks between words, never inside one; a single word longer than the line may still break. */
+  word-break: keep-all; overflow-wrap: anywhere;
+  padding: var(--space-2); background: var(--paper-light); border: var(--line) solid var(--wood);
+  scrollbar-width: thin; scrollbar-color: var(--wood) var(--paper);
+}
+.bph-codex-page-head { display: flex; align-items: flex-start; gap: var(--space-3); }
+.bph-codex-page-head > .bph-codex-art { width: calc(var(--art) + var(--space-2)); background: var(--paper); box-shadow: inset 0 0 0 var(--line) var(--wood-pale); }
+.bph-codex-title { display: grid; gap: var(--space-1); flex: 1; min-width: 0; }
+.bph-codex-title h2 { margin: 0; font-size: var(--type-heading); font-weight: 400; line-height: 1.2; word-break: keep-all; overflow-wrap: break-word; }
+.bph-codex-sub { margin: 0; line-height: 1.4; color: var(--wood-dark); }
+.bph-codex-x { flex: none; }
+.bph-codex-x img { transform: rotate(45deg); }
+.bph-codex-section { display: grid; gap: var(--space-2); }
+.bph-codex-section h3 { margin: 0; font-size: var(--type-fine); font-weight: 400; color: var(--red-deep); }
+.bph-codex-section p { margin: 0; line-height: 1.5; }
+
+.bph-codex-evolution { display: grid; gap: var(--space-1); margin: 0; padding: 0; list-style: none; }
+.bph-codex-evolution li { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); }
+.bph-codex-evolution li + li::before { content: ""; width: 16px; height: 16px; background: url("/art/icons/back.webp") center / 16px 16px no-repeat; transform: scaleX(-1); }
+.bph-codex-evolution strong { font-weight: 400; }
+.bph-codex-tag { padding: 0 var(--space-1); background: var(--green); color: var(--cream); }
+
+.bph-codex-battles { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.bph-codex-battles li { display: grid; gap: var(--space-1); padding-bottom: var(--space-2); border-bottom: var(--hair) solid var(--paper-shade); }
+.bph-codex-battle-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); }
+.bph-codex-battle-head strong { font-weight: 400; }
+.bph-codex-verdict { padding: 0 var(--space-2); background: var(--paper-shade); color: var(--ink); }
+.bph-codex-verdict[data-verdict="victory"] { background: var(--green); color: var(--cream); }
+.bph-codex-verdict[data-verdict="defeat"] { background: var(--red-deep); color: var(--cream); }
+.bph-codex-verdict[data-verdict="defended"] { background: var(--gold); }
+.bph-codex-side { color: var(--wood); }
+
+.bph-codex-reward, .bph-codex-rule {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); margin: 0;
+}
+.bph-codex-rule { flex-wrap: nowrap; align-items: flex-start; line-height: 1.5; }
+/* The Korean one-sentence rules are two clauses, and balancing their two lines puts the break between the clauses. Balancing the English ones splits the first clause, so they keep the plain wrap. */
+:lang(ko) :is(.bph-codex-rule, .bph-codex-page[data-view="summary"] .bph-codex-section > p) { text-wrap: balance; }
+.bph-codex-reward { padding: var(--space-2) var(--space-3); background: var(--paper); border: var(--line) dashed var(--wood-pale); }
+.bph-codex-reward.is-claimed { border-style: solid; border-color: var(--gold); }
+.bph-codex-reward b { font-weight: 400; }
+.bph-codex-tally { color: var(--wood-dark); font-variant-numeric: tabular-nums; }
+.bph-codex-notice { flex-wrap: wrap; gap: var(--space-1) var(--space-3); margin: 0; color: var(--cream); }
+.bph-codex-notice > span { display: inline-flex; align-items: center; gap: var(--space-1); white-space: nowrap; }
+.bph-codex-summary-head .bar { margin-top: var(--space-3); }
+.bph-codex-milestones { display: grid; gap: var(--space-1); margin: 0; padding: 0; list-style: none; }
+.bph-codex-milestones li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto 16px; align-items: center; gap: var(--space-1) var(--space-2); min-height: 36px; }
+.bph-codex-milestones strong { min-width: 0; font-weight: 400; word-break: keep-all; }
+.bph-codex-milestones .bph-codex-art { --art: 32px; --art-height: 32px; }
+
+@container (min-width: 560px) {
+  .bph-codex-book {
+    grid-template-rows: minmax(0, 1fr); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-4);
+    background: linear-gradient(90deg, transparent calc(50% - var(--space-2)), var(--wood-dark) calc(50% - var(--space-2)) calc(50% + var(--space-2)), transparent calc(50% + var(--space-2)));
+  }
+  .bph-codex-index { padding: var(--space-3); background: var(--paper-light); border: var(--line) solid var(--wood); }
+  .bph-codex-class { flex-direction: column; gap: 0; }
+}

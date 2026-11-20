@@ -1,0 +1,150 @@
+.bph-web {
+  --bph-ink: #39251b; --bph-paper: #eedab2; --bph-light: #f9e9c4;
+  --bph-line: #68442b; --bph-accent: #862e25; --bph-gold: #d7ad54; --bph-on-gold: #39251b;
+  --bph-gap: 8px; --bph-pad: 12px; --bph-tap: 44px; --bph-art: 40px;
+  --bph-wallet: var(--sprite); --bph-step: calc(var(--type-fine) * 1.25);
+  /* What the sheet always spends: its border, top inset, the gap above the buy row, that row and the bottom inset. */
+  --bph-sheet-end: max(var(--space-1), env(safe-area-inset-bottom));
+  --bph-sheet-fixed: calc(var(--hair) + var(--bph-gap) + var(--space-1) + var(--bph-tap) + var(--bph-sheet-end));
+  box-sizing: border-box; height: 100%; max-height: 100dvh; min-height: 0; width: 100%;
+  /* The tree keeps at least 60% of the panel. The sheet limits itself to the rest (see .bph-web-detail),
+     so this track floor only holds that line where container units are missing. */
+  container-type: size;
+  display: grid; grid-template-rows: auto minmax(min(60%, 100% - var(--bph-wallet) - var(--bph-sheet-fixed) - var(--bph-tap)), 1fr) auto;
+  overflow: hidden; color: var(--bph-ink); background: var(--bph-paper);
+  font: 17px/1.45 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-variant-numeric: tabular-nums; color-scheme: light dark;
+}
+.bph-web *, .bph-web *::before, .bph-web *::after { box-sizing: border-box; }
+.bph-web h3, .bph-web p { margin: 0; }
+.bph-web h3 { font-size: 22px; margin-bottom: 8px; }
+.bph-web p { overflow-wrap: anywhere; word-break: keep-all; }
+.bph-web button, .bph-web select, .bph-web summary {
+  min-height: var(--bph-tap); font: inherit; color: var(--bph-ink); cursor: pointer;
+}
+.bph-web button, .bph-web select {
+  border: 1px solid var(--bph-line); border-radius: 0; background: var(--bph-light); padding: 8px 12px;
+}
+.bph-web button:hover { background: var(--bph-gold); color: #39251b; }
+.bph-web button:active { transform: none; }
+.bph-web button:disabled { cursor: default; background: var(--bph-paper); color: var(--bph-line); }
+.bph-web :focus-visible { outline: 3px solid var(--bph-accent); outline-offset: 2px; }
+.bph-web ::selection { background: var(--bph-gold); color: #39251b; }
+.bph-web-wallet { position: relative; }
+/* One compact row above the tree, as tall as its coin art. The whole row opens the full balance list. */
+.bph-web .bph-web-wallet summary { display: flex; align-items: center; gap: 8px; min-height: var(--bph-wallet); padding-inline: var(--bph-pad); font-size: 16px; font-weight: 600; }
+.bph-web-wallet summary img { width: 24px; height: 24px; image-rendering: pixelated; }
+.bph-web-wallet summary img:not(:first-child), .bph-web-goal { margin-left: 16px; }
+.bph-web-goal { white-space: nowrap; }
+.bph-web-balances { display: none; }
+.bph-web-wallet[open] .bph-web-balances {
+  position: absolute; z-index: 5; inset: 100% var(--bph-pad) auto; padding: 8px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; background: var(--bph-light);
+  border: 1px solid var(--bph-line);
+}
+.bph-web .bph-web-balance { display: flex; align-items: center; gap: 4px; min-width: 0; padding: 4px; }
+.bph-web-balance img { flex: none; width: 24px; height: 24px; image-rendering: pixelated; }
+.bph-web-balance span { margin-left: auto; overflow-wrap: anywhere; font-size: 16px; }
+.bph-web-resource-name { grid-column: 1 / -1; white-space: nowrap; font-size: 16px; min-height: 22px; }
+.bph-web-targets { grid-column: 1 / -1; display: grid; gap: var(--space-1); margin: 0; font-size: 16px; }
+.bph-web-targets > div { display: flex; justify-content: space-between; gap: var(--bph-gap); }
+.bph-web-targets dd { margin: 0; }
+.bph-web-map { overflow: auto; min-width: 0; min-height: 0; background: var(--bph-light); overscroll-behavior: contain; touch-action: none; cursor: grab; }
+.bph-web-map:active { cursor: grabbing; }
+.bph-web-map, .bph-web-detail > details { scrollbar-color: var(--bph-line) var(--bph-paper); scrollbar-width: thin; }
+.bph-web-canvas { position: relative; }
+.bph-web-zone { position: absolute; z-index: 0; pointer-events: none; border: 3px solid var(--bph-line); background: color-mix(in srgb, var(--bph-gold) 6%, transparent); }
+.bph-web-zone:nth-child(even) { border-style: dashed; background: color-mix(in srgb, var(--bph-accent) 6%, transparent); }
+.bph-web-zone-name { position: sticky; top: 8px; left: 8px; width: max-content; max-width: 100%; margin: 8px !important; padding: 4px 8px; background: var(--bph-paper); color: var(--bph-ink); font-size: 16px !important; }
+.bph-web-canvas svg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bph-web-canvas line { stroke-width: 8; shape-rendering: crispEdges; }
+.bph-web .bph-web-node, .bph-web .bph-web-junction {
+  position: absolute; width: 44px; height: 44px; padding: 0; z-index: 1;
+  --node-frame: url("/art/icons/bph-node-states-locked.webp");
+  font-size: 20px; border: 0; background: none; display: grid; place-items: center;
+}
+.bph-web .bph-web-node.available { --node-frame: url("/art/icons/bph-node-states-available.webp"); background: none; color: #39251b; font-weight: 700; }
+.bph-web .bph-web-node.bought { --node-frame: url("/art/icons/bph-node-states-owned.webp"); background: none; color: var(--bph-light); }
+.bph-web .bph-web-node.locked { color: var(--bph-line); }
+.bph-web-node img, .bph-web-junction img { width: auto; height: auto; min-width: 16px; min-height: 16px; image-rendering: pixelated; position: relative; }
+.bph-web-node::before, .bph-web-junction::before, .bph-web-node.selected::after { content: ""; position: absolute; inset: 0; border: 8px solid transparent; border-image: var(--node-frame) 8 fill / 8px / 0 repeat; pointer-events: none; image-rendering: pixelated; }
+.bph-web-node.selected::after { inset: -4px; border-image-source: url("/art/icons/bph-node-states-selected.webp"); }
+.bph-web .bph-web-node.locked { --node-frame: url("/art/icons/bph-node-states-locked.webp"); background: none; border: 0; }
+.bph-web-junction { pointer-events: none; }
+.bph-web-node.locked img, .bph-web-junction img { opacity: .5; }
+.bph-web-check, .bph-web-gate { position: absolute; right: 0; bottom: -2px; width: 24px; height: 24px; background: url("/art/icons/bph-node-check.webp") center / 24px 24px no-repeat; image-rendering: pixelated; pointer-events: none; z-index: 2; }
+.bph-web-gate { background-image: url("/art/icons/lock.webp"); }
+.bph-web .bph-web-node.passage { color: var(--bph-ink); }
+.bph-web-face { position: relative; flex: none; width: 44px; height: 44px; display: grid; place-items: center; }
+.bph-web-art { display: flex; }
+.bph-web-art.unit, .bph-web-art.ship { display: block; width: 32px; height: 32px; overflow: hidden; }
+.bph-web-art.ship { width: 28px; }
+.bph-web .bph-web-art img { position: relative; left: 0; top: 0; }
+.bph-web .bph-web-art.unit img { display: block; width: 64px; height: 32px; max-width: none; }
+.bph-web .bph-web-art.ship img { display: block; width: 392px; height: 96px; max-width: none; margin-top: -64px; }
+.bph-web .bph-web-badge { position: absolute; left: -10px; top: -10px; z-index: 2; }
+#app .bph-web .bph-web-badge, .bph-web .bph-web-badge { width: 24px; height: 24px; }
+.bph-web-rank { position: absolute; right: -6px; top: -6px; z-index: 2; display: flex; gap: 2px; font-size: 16px; line-height: 1; font-weight: 700; pointer-events: none; }
+.bph-web-rank i { width: 10px; height: 10px; background: var(--bph-paper); border: 2px solid var(--bph-line); }
+.bph-web-rank i.on { background: var(--bph-gold); }
+.bph-web-rank:not(:has(i)) { padding: 1px 2px; background: var(--bph-gold); color: var(--bph-on-gold); border: 1px solid var(--bph-on-gold); }
+/* In the sheet the face fills the art column: the picture sits low and right so the badge stays inside the scroll box. */
+.bph-web-effect .bph-web-face { position: absolute; left: 0; top: 0; place-items: end; }
+.bph-web .bph-web-effect .bph-web-badge { left: 0; top: 0; }
+.bph-web-description { white-space: normal; font-size: var(--type-fine); line-height: 1.25; }
+.bph-web-limit, .bph-web-note { font-size: var(--type-fine); line-height: 1.25; font-weight: 700; }
+.bph-web-note { white-space: pre-line; }
+.bph-web .bph-web-node.selected { outline: none; }
+.bph-web-detail {
+  min-height: 0; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, auto) auto; align-content: start; align-items: center;
+  gap: var(--space-1) var(--bph-gap); padding: var(--bph-gap) var(--bph-pad) var(--bph-sheet-end);
+  border-top: var(--hair) solid var(--bph-line);
+  /* At most the 40% the tree leaves, less the wallet row, cut back to whole text lines: the tree takes what is
+     left over instead of the sheet holding a blank strip. It never drops below a name and the buy row. */
+  max-height: max(var(--bph-sheet-fixed) + var(--bph-tap), var(--bph-sheet-fixed) + var(--space-1)
+    + round(down, 40cqh - var(--bph-wallet) - var(--bph-sheet-fixed) - var(--space-1), var(--bph-step)));
+}
+.bph-web-detail > details, .bph-web-detail > p { grid-column: 1 / -1; }
+/* Every line under the name is one step tall, and the scroll window ends on a step, so no line is ever cut in half. */
+.bph-web-detail > details {
+  position: relative; align-self: start; max-height: calc(var(--space-1) + round(down, 100% - var(--space-1), var(--bph-step)));
+  padding-left: calc(var(--bph-art) + var(--bph-gap)); overflow: auto; overscroll-behavior: contain;
+}
+.bph-web-effect { display: grid; align-content: center; cursor: pointer; }
+.bph-web-effect img { position: absolute; left: 0; top: calc((var(--bph-tap) - var(--bph-art)) / 2); width: var(--bph-art); height: var(--bph-art); image-rendering: pixelated; }
+.bph-web-title { display: grid; }
+.bph-web-title strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: var(--space-5); }
+.bph-web-title span { font-size: var(--type-fine); line-height: 1.25; }
+.bph-web details[open] > .bph-web-effect { min-height: 0; }
+.bph-web details[open] .bph-web-title span { display: none; }
+.bph-web-costs { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-4); min-width: 0; }
+.bph-web-cost { display: inline-flex; align-items: center; gap: 8px; }
+.bph-web-cost img, .bph-web-buy img, .bph-web-costs > img { width: 24px; height: 24px; image-rendering: pixelated; vertical-align: middle; }
+.bph-web-buy img { margin-right: 8px; }
+.bph-web-detail .skill-growth-line { line-height: 1.25; color: var(--bph-line); }
+/* The lock and trophy art is 32px. The shorter padding keeps the button one tap high with or without it. */
+.bph-web .bph-web-buy { display: flex; align-items: center; justify-content: center; min-width: calc(var(--bph-tap) * 3); padding-block: var(--space-1); background: var(--bph-accent); color: var(--bph-light); font-weight: 700; white-space: nowrap; }
+.bph-web .bph-web-buy:disabled { background: var(--bph-paper); color: var(--bph-line); opacity: .65; }
+.bph-web-status { font-size: 16px; min-height: 22px; }
+.bph-web-source { margin-top: 12px; font-size: 16px; }
+.bph-web-source code { display: block; overflow-wrap: anywhere; user-select: text; }
+.bph-web, .bph-web-detail { animation: deal var(--ui-open) var(--ui-ease) both; }
+.bph-web-node.selected img { animation: ui-pulse var(--ui-settle) var(--ui-ease) both; }
+:root:has(#toggle-motion[aria-pressed="true"]) :is(.bph-web, .bph-web-detail) { animation: ui-fade-in var(--ui-close) ease-out both; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-web-node.selected img { animation: none; }
+@media (prefers-color-scheme: dark) {
+  .bph-web { --bph-ink: #fff2c6; --bph-paper: #231d17; --bph-light: #332a23; --bph-line: #c5a878; --bph-accent: #ffe29a; }
+  .bph-web .bph-web-buy { color: #39251b; }
+}
+@media (min-width: 900px) {
+  .bph-web { grid-template-columns: minmax(0, 1fr) 300px; grid-template-rows: auto minmax(0, 1fr); }
+  .bph-web-wallet { grid-column: 1 / -1; }
+  .bph-web-detail { grid-column: 2; grid-row: 2; border-top: 0; max-height: none; }
+  .bph-web-map { grid-column: 1; grid-row: 2; }
+}
+@media (prefers-reduced-motion: reduce) { .bph-web button:active { transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .bph-web, .bph-web-detail { animation: ui-fade-in var(--ui-close) ease-out both; }
+  .bph-web-node.selected img { animation: none; }
+}

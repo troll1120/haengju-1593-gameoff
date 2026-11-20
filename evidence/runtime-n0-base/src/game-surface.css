@@ -1,0 +1,19 @@
+#app {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#app :is(input, textarea, select, [contenteditable=""], [contenteditable="true" i], [contenteditable="plaintext-only" i]),
+#app :is([contenteditable=""], [contenteditable="true" i], [contenteditable="plaintext-only" i]) * {
+  user-select: text;
+  -webkit-user-select: text;
+  -webkit-touch-callout: default;
+}
+#app [contenteditable="false" i],
+#app [contenteditable="false" i] * {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+#app :is(img, canvas, svg) { -webkit-user-drag: none; }

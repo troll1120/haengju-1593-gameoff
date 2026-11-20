@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "origin": "image-tool artwork (gate light burst, gate dust, card glint), nearest-downscaled to the game palette; owner OK'd the approach ('그래 이렇게 해 봐') and the lead reviewed the sheets",
+  "source": "lane-results/2026-11-17/join-fx-art (source-manifest.json keeps the receipts, palettes and source SHA-256s)",
+  "art": {
+    "fx/join-gate.png": "78df237c3dd3e9841d7b155f263d40939c1877277a7bf5700fe21559994a02b4",
+    "fx/join-dust.png": "7fac68824d75cab48d3b4ee75df6df379e1ee60870b5a1a4103f42d0bd59f429",
+    "fx/join-glint.png": "45a1e3b5a422f0dc8d1a52b7b2839e291a667d6ce76543bb86cdc93836be1fce",
+    "fx/discovery-burst.png": "78df237c3dd3e9841d7b155f263d40939c1877277a7bf5700fe21559994a02b4",
+    "fx/discovery-glint.png": "45a1e3b5a422f0dc8d1a52b7b2839e291a667d6ce76543bb86cdc93836be1fce"
+  },
+  "copies": "fx/discovery-burst.png and fx/discovery-glint.png (0fd6c66, recruit new-discovery burst) are byte-identical copies of fx/join-gate.png and fx/join-glint.png"
+}

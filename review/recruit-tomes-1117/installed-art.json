@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "origin": "owner-requested recolour (castle ledger 555): the shared tactic book icons/tome-book-svg.webp with only its two red cover colours (c34b35 main, 763b36 shade) swapped for one non-red pair per tactic; every other pixel unchanged",
+  "source": { "file": "icons/tome-book-svg.webp", "sha256": "c9efe982f3443e046cd9a031ba6247e099157c77e1f4ecd110617266fb34dbdf" },
+  "art": {
+    "tomes/Tome_Blizzard.png": "f3531901fc73c2150c1b8630b1f7b060a7dc3c634a7ff3715e716736455fff09",
+    "tomes/Tome_BountyHunt.png": "20e8d0709eb6ff8809fb1cf887a2d6b6c4dea983e2d4836c459d750fc380f43e",
+    "tomes/Tome_CursorDPS.png": "a78ee9a5bf23d3f06a88222631a7a3e79d6ff6da9929de646e74997912a17cf5",
+    "tomes/Tome_DragonsCall.png": "e92e720729de5e31b02e05e064fa7e7cb12eee6d2b8c5d901318244fa9354dfb",
+    "tomes/Tome_Earthquake.png": "5f126403a11daf5beb3903f4d322362f562897195e2003d62e52b6d59473d13d",
+    "tomes/Tome_FortuneCache.png": "b2eb4adfb726c6372c76ea006c5f9477180de9721a16cfd643a18876dad625fe",
+    "tomes/Tome_HeroFrenzy.png": "f048e89988c176872e2c2be9a4d7431bd239407067e901943106cfe580df4a56",
+    "tomes/Tome_RaiseDead.png": "710c2ba94e556c01c26d0c9863e0958d1e3c1064a4b46d453c32b01655e1c343",
+    "tomes/Tome_SpectralPact.png": "b267e199d7ada9632126b308ba79b0b8227a113bde934bb2182bb6447fa515b6",
+    "tomes/Tome_Thunderstorm.png": "04a0bb97eaf76a634112f321804325cb4a52a20ae3c17a092411af03fdac2fab",
+    "tomes/Tome_Transmutation.png": "f0b6d7611580d0255b60dcb408da8b32d5d1c70dc6b560b06769b16bba00ceb5"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "origin": "image-tool artwork (codex built-in image tool) for the generals' own basic-attack reach, cut into 32x32 cells and snapped to the game's fixed 32 colours; the owner approved drawing them ('추천대로 해봐', DM 1794968996) and they are wired on feat/general-reach-1118 for the owner's look before any merge",
+  "source": "lane-results/2026-11-18/general-fx (source-manifest.json keeps the receipts, prompts, palettes, processing commands and source SHA-256s)",
+  "art": {
+    "fx/naval-shot.png": "4a722c2b525ed341e25e6c7a5819762b2c5e01707cda720e9a4464418ea08c98",
+    "fx/cavalry-dust.png": "91cfe4bf1a84eb6ecd0a0b2b4609f9383c67338c8203940ccfee51ea902eddad",
+    "fx/cavalry-rush.png": "eacdccb5195abe1edc9a2d3e3eac87c0eed756e3368ee1120263e8fba0e82e53",
+    "fx/rampart-thrust.png": "9826982e10ca4b8b062da2d9179b48393ea5f0bcd3e621f5b8f8f8c37c579666",
+    "fx/staff-sweep.png": "2f284299ab4f5f4adad2ec4c61262827a50a3e284bbe6c9600cff837134af29a"
+  }
+}

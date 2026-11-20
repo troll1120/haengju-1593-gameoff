@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "origin": "image-tool artwork (codex built-in image tool) of 송상현's wooden tablet, drawn by the mokpae lane after the owner's '추천대로 해봐' (DM 1794964237); the owner chose four frames (DM 1794990058). Its first four flight frames are laid into 32x32 cells and snapped to the game's fixed 32 colours like the generals' other reach sheets, and wired on feat/songsanghyeon-tablet-1118 for the owner's look before any merge",
+  "source": "lane-results/2026-11-18/songsanghyeon-tablet (source-manifest.json keeps the source frames, receipt, prompt, palette, processing commands and SHA-256s)",
+  "art": {
+    "fx/tablet-toss.png": "a4d9bf5ad2dcf30e2a6b6e8d79e52eb7c40b7c39f0ac2696182d531f52ce76f6"
+  }
+}

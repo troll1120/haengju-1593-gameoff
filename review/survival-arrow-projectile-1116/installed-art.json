@@ -1,0 +1,27 @@
+{
+  "installed": "2026-11-16",
+  "base": "4e348107de65c80f1c838952a0167a92bce26a07",
+  "art": {
+    "fx/arrow.png": "dea199428f3e201ba77d2d520ec8e94c4b4b91e510fb8a3d3b3aa2f694371ea8"
+  },
+  "arrow": {
+    "file": "public/art/fx/arrow.png",
+    "size": "272x17 (16 frames of 17x17, one per 22.5 degrees clockwise from east)",
+    "shownAt": "1x, scaled by projectile tier as before",
+    "from": "hand-placed pixel art: scripts/arrow-art.ts",
+    "colours": [
+      "#262b44",
+      "#e4edf9",
+      "#976a52",
+      "#c99972",
+      "#dee5ef",
+      "#6ea5ac",
+      "#8b9bb4",
+      "#c0cbdc"
+    ],
+    "alphaValues": [
+      0,
+      255
+    ]
+  }
+}

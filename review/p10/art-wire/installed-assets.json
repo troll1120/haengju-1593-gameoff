@@ -1,0 +1,96 @@
+{
+  "sourceCommit": "36f2e7f7027402be259f556745ddf8e51c3393f8",
+  "portraitMethod": "first 32x32 frame, nearest-neighbor integer scale 2, 64x64",
+  "packIcons": [
+    {
+      "id": "Pack1_Basic",
+      "icon": "public/art/icons/troop-upgrade-pack.png",
+      "palette": "blue",
+      "sha256": "9ce8e35a12ca7e0f560a912fee97d715991c7149d0f124e20667b2f543bd85f4"
+    },
+    {
+      "id": "Pack6_Forest",
+      "icon": "public/art/icons/troop-upgrade-pack-forest.png",
+      "palette": "green",
+      "sha256": "fc0d9fdf70bfa8d32a847bfe0b917700922a4c617d997e8aa481f376b30a8103"
+    },
+    {
+      "id": "Pack2_Advanced",
+      "icon": "public/art/icons/troop-upgrade-pack-advanced.png",
+      "palette": "violet",
+      "sha256": "0396dcc29bfd91aacdb6afb54394f47946e47ce13d4e3e2d430d02a25290ba15"
+    }
+  ],
+  "assets": [
+    {
+      "id": "kim_simin",
+      "unit": "public/art/units/kim_simin.png",
+      "sha256": "d1879b5d7ef02973c560be3fbea94a5a897eeb2e3e727320f64a237fb6b755f8",
+      "portrait": true,
+      "portraitSha256": "a510fd695a69974c408fe017c6751018ca2c8d471a21855a056df672fc8c1483"
+    },
+    {
+      "id": "hwang_jin",
+      "unit": "public/art/units/hwang_jin.png",
+      "sha256": "7f307225b682a92dc03126c91a6cb97947a05d33dfe477fcbd3231c65cd64850",
+      "portrait": true,
+      "portraitSha256": "0ed3f542b82c9001b9cb22e8af9ce1f80afe2630ff0d0cb55a98aa2ddbaa29aa"
+    },
+    {
+      "id": "shin_gak",
+      "unit": "public/art/units/shin_gak.png",
+      "sha256": "9560647359362601bd30c9bbb3d59d08b781e19e271f7e5aaeab694b3a0fe61c",
+      "portrait": true,
+      "portraitSha256": "47f12e5bdb4bfbfc2e9efe89107d1201b320cb0fd139fb48027281d5b1208e31"
+    },
+    {
+      "id": "kim_yeomul",
+      "unit": "public/art/units/kim_yeomul.png",
+      "sha256": "1dfad2a3e1c3dc1744482fbed0979c0afa0fe77bc1b9fd5d62df590b1797cc51",
+      "portrait": true,
+      "portraitSha256": "45210071e62be1a79ca608422c7f6acdd94a4c563e846a3c1bb6de9f3a2cdcda"
+    },
+    {
+      "id": "ming_cavalry",
+      "unit": "public/art/units/ming_cavalry.png",
+      "sha256": "7c6779f79cda3026815af6c4db507826037f31cdb42e21a99ea3d054f064cd2c",
+      "portrait": false,
+      "portraitSha256": null
+    },
+    {
+      "id": "yi_sunsin",
+      "unit": "public/art/units/yi_sunsin.png",
+      "sha256": "6e71402faf70a090f4c9bca37c68b84b33f2ae42917d0bed649cb52dd8d4b1c3",
+      "portrait": true,
+      "portraitSha256": "0ddc93920531a62653133bd639fddc419963a4589d68bf3595f7503c0b65bd29"
+    },
+    {
+      "id": "samyeong",
+      "unit": "public/art/units/samyeong.png",
+      "sha256": "2e5a8d459e6aa744e787ff92e689fc2870fd8a52e0f5c049016b6d8f123b0717",
+      "portrait": true,
+      "portraitSha256": "0e0f16488a4744b78e9ae7dc78a03e79d41d591a80604568f65ca2fa3a456674"
+    },
+    {
+      "id": "chongtong",
+      "unit": "public/art/units/chongtong.png",
+      "sha256": "a8d32bd8b3286f0beaaf20646ca137502125833cf8e7bcee542180e6b930c285",
+      "portrait": false,
+      "portraitSha256": null
+    },
+    {
+      "id": "uibyeong",
+      "unit": "public/art/units/uibyeong.png",
+      "sha256": "76d5322f947a53081736b426db676322e17b1dd1cb84ff052ee5bbcdc0d81e90",
+      "portrait": false,
+      "portraitSha256": null
+    },
+    {
+      "id": "cavalry",
+      "unit": "public/art/units/cavalry.png",
+      "sha256": "44563d4a5faa9b11418d3af2752c0bd9ccebce0c191b5f9e734ebc76810304ba",
+      "portrait": false,
+      "portraitSha256": null
+    }
+  ]
+}

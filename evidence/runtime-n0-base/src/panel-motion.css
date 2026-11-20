@@ -1,0 +1,29 @@
+:is(#intro, #result, #choice, #barracks, .building, .bph-management, .bph-web, .bph-codex, .bph-codex-popup, .bph-receipt, .bph-web-balances) {
+  opacity: 1;
+  scale: 1;
+  transition: opacity var(--ui-open) var(--ui-ease), scale var(--ui-open) var(--ui-ease), display var(--ui-open) allow-discrete, overlay var(--ui-open) allow-discrete;
+}
+/* Keep the primary footer hit target stationary even on very tall viewports. */
+.bph-management { transform-origin: center bottom; }
+:is(#intro, #result, #choice, #barracks, .building, .bph-management, .bph-web, .bph-codex, .bph-receipt)[hidden] {
+  opacity: 0;
+  scale: .98;
+  transition-duration: var(--ui-close);
+}
+.overlay, .bph-screen, .bph-codex-popup::backdrop {
+  transition: opacity var(--ui-open) var(--ui-ease), display var(--ui-open) allow-discrete, overlay var(--ui-open) allow-discrete;
+}
+.overlay[hidden], .bph-screen[hidden] { opacity: 0; transition-duration: var(--ui-close); }
+.bph-codex-popup.closing::backdrop { opacity: 0; transition-duration: var(--ui-close); }
+.bph-web-wallet:not([open]) .bph-web-balances { opacity: 0; scale: .98; transition-duration: var(--ui-close); }
+@starting-style {
+  :is(#intro, #result, #choice, #barracks, .building, .bph-management, .bph-web, .bph-codex, .bph-codex-popup, .bph-receipt, .bph-web-balances) {
+    opacity: 0;
+    scale: .96;
+  }
+  .overlay, .bph-screen, .bph-codex-popup::backdrop { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(#intro, #result, #choice, #barracks, .building, .bph-management, .bph-web, .bph-codex, .bph-codex-popup, .bph-receipt, .bph-web-balances) { scale: 1 !important; transition-duration: var(--ui-close); }
+}
+:root:has(#toggle-motion[aria-pressed="true"]) :is(#intro, #result, #choice, #barracks, .building, .bph-management, .bph-web, .bph-codex, .bph-codex-popup, .bph-receipt, .bph-web-balances) { scale: 1 !important; transition-duration: var(--ui-close); }

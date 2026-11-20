@@ -1,0 +1,23 @@
+{
+  "installed": "2026-11-18",
+  "base": "4bb4d4af66cbc11a34cbdc87e68191ecd9a3c336",
+  "source": "Original Song Sanghyeon fullset pixels, edited under the lead's explicit fallback authorization after image-tool provider failures. Native throw-source.png was generated and inspected but rejected for face/costume drift. Held tablet is extracted from the existing image-generated tablet-toss.png. Wood splinters are manually authored with the fixed palette.",
+  "frame": { "width": 56, "height": 64, "footRow": 61, "columns": 4, "rows": ["front", "back", "side"], "release": 2 },
+  "hit": { "width": 32, "height": 32, "frames": 4, "frameRate": 20, "repeat": 0 },
+  "art": {
+    "generals/song_sanghyeon/front_throw_attack_0.png": "9df583f761c55a8948c31936bdbe8eb9700e782caaa18355b66e0166cf456732",
+    "generals/song_sanghyeon/front_throw_attack_1.png": "983cd0eba34e4f4b2230c4a06c7ddea4019b1b735c4e21b0f40ddd94f2723c17",
+    "generals/song_sanghyeon/front_throw_attack_2.png": "a76a16c37e1be56580877a6179b798b03aaaf459de4fe0754b207396bad473cc",
+    "generals/song_sanghyeon/front_throw_attack_3.png": "7ba6d3e811c819e11e1917af3e3b602bd5d4ba8baf1245245281abaf03a39cbf",
+    "generals/song_sanghyeon/back_throw_attack_0.png": "5e0afa80d640e855fa16a96606b5b7159579384b1ac177b4979faad15ecc1d34",
+    "generals/song_sanghyeon/back_throw_attack_1.png": "b6967eafead91adf70fcc0092c427c755cd31f3c96dd377a66e54afb593439e5",
+    "generals/song_sanghyeon/back_throw_attack_2.png": "cabdfa19fe15905e58338bbf69c503b7b2c2427f4c669c2a79d9c9c8508cb86c",
+    "generals/song_sanghyeon/back_throw_attack_3.png": "36a581a8eeee8c770ea4afb9ae6dc2ecb80530d55824a78953aea6a9f54e44ea",
+    "generals/song_sanghyeon/side_throw_attack_0.png": "c136ea2bda7e38b1b90c9d734a20fdfb3b96eabaf21cecfa1cf20f7e91d385d2",
+    "generals/song_sanghyeon/side_throw_attack_1.png": "22a1b256d12815f2b3c1060f30f8c72d565d64df2d1979e86b1b01102086e8b7",
+    "generals/song_sanghyeon/side_throw_attack_2.png": "7cd179d367d85004c8d6c23071171e98a50d3508bafad4222424ac5ec99b749c",
+    "generals/song_sanghyeon/side_throw_attack_3.png": "7d513ba52c0ea7432d8f0beeeea2330cf350872def9c080245fd4151526985ac",
+    "generals/song_sanghyeon_throw_attack.webp": "d6bae61450d26c7db05922fb1d4ef45e24966a379608a681a34f914420d25a9f",
+    "fx/tablet-hit.png": "a04bcefcc973a7d795355ae1093d6f85b7a07817917e34a95c96f559e9fb4dec"
+  }
+}

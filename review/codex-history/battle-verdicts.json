@@ -1,0 +1,32 @@
+{
+  "basis": "2026-11-16 원문 대조표. 열: 기존 roster ID, 사건 ID, 판정의 진영, 판정, 근거 source ID. 인물의 죽음과 소속 진영의 승패를 구분한다. 정본 명단 전체 확장이 아니라 이번 모듈이 표시하는 근거 확인 사건만 포함한다.",
+  "rows": [
+    ["gwon_yul", "ichi-1592", "joseon", "victory", "gwon"],
+    ["gwon_yul", "doksanseong-1592", "joseon", "defended", "gwon"],
+    ["gwon_yul", "haengju-1593", "joseon", "victory", "gwon"],
+    ["yi_sunsin", "okpo-1592", "joseon", "victory", "yi"],
+    ["yi_sunsin", "hansan-1592", "joseon", "victory", "yi"],
+    ["yi_sunsin", "myeongnyang-1597", "joseon", "victory", "myeongnyang"],
+    ["yi_sunsin", "noryang-1598", "joseon-ming", "victory", "yi"],
+    ["kim_simin", "jinju-1592", "joseon", "victory", "kim"],
+    ["gwak_jaeu", "jeongamjin-1592", "joseon", "victory", "gwak"],
+    ["gwak_jaeu", "hwawang-1597", "joseon", "defended", "gwak"],
+    ["samyeong", "pyongyang-1593", "joseon-ming", "victory", "samyeong"],
+    ["sin_rip", "tangeumdae-1592", "joseon", "defeat", "sin"],
+    ["song_sanghyeon", "dongnae-1592", "joseon", "defeat", "song"],
+    ["hwang_jin", "ichi-1592", "joseon", "victory", "gwon"],
+    ["hwang_jin", "jinju-1593", "joseon", "defeat", "hwang", "jinju"],
+    ["japan_ukita", "haengju-1593", "japan", "defeat", "haengju"],
+    ["japan_konishi", "tangeumdae-1592", "japan", "victory", "sin"],
+    ["japan_konishi", "pyongyang-1593", "japan", "defeat", "byeokjegwan"],
+    ["japan_konishi", "haengju-1593", "japan", "defeat", "haengju"],
+    ["japan_wakizaka", "hansan-1592", "japan", "defeat", "yi"],
+    ["japan_kobayakawa", "ichi-1592", "japan", "defeat", "gwon"],
+    ["japan_kobayakawa", "byeokjegwan-1593", "japan", "victory", "byeokjegwan"],
+    ["japan_kato_yoshiaki", "sekigahara-1600", "eastern-army", "victory", "kato", "katoSide"],
+    ["japan_kurushima", "myeongnyang-1597", "japan", "defeat", "myeongnyang"],
+    ["japan_nabeshima", "korea-campaign-1592-1598", "japan", "uncertain", "nabeshima"],
+    ["japan_todo", "myeongnyang-1597", "japan", "defeat", "myeongnyang"],
+    ["japan_todo", "sekigahara-1600", "eastern-army", "victory", "todo"]
+  ]
+}
