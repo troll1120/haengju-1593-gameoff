@@ -1,0 +1,223 @@
+.bph-screen { position: absolute; inset: 0; z-index: 10; padding: var(--space-3); background: var(--veil); }
+.bph-management { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; width: 100%; max-width: none; gap: var(--space-3); }
+.bph-management > header, .bph-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.bph-management h1 { font-size: var(--type-label); margin: 0; flex: 1; }
+.bph-management-body { min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.bph-management label { display: flex; flex-direction: column; gap: var(--space-2); }
+.bph-management select { min-height: var(--tap); padding: var(--space-2); background: var(--paper-light); color: var(--ink); border: var(--line) solid var(--wood); font: inherit; width: 100%; }
+.bph-management :focus-visible { outline: var(--stroke) solid var(--red-deep); outline-offset: var(--line); }
+.bph-balance { font-variant-numeric: tabular-nums; line-height: 1.6; }
+.bph-balance, .bph-balance span { display: flex; align-items: center; gap: 12px; }
+.bph-balance img { width: 24px; height: 24px; image-rendering: pixelated; }
+.bph-commanders { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 16px; }
+.bph-commander { display: grid; justify-items: center; min-width: 44px; padding: 4px; font-size: 16px; }
+.bph-commanders .bph-commander.locked { width: 44px; min-width: 44px; }
+.bph-commanders .bph-commander.locked img { width: 32px; height: 40px; }
+.bph-commander img { width: 44px; height: 48px; object-fit: contain; image-rendering: pixelated; }
+.bph-commander.locked img { content: url("/art/icons/codex-undiscovered-silhouette.webp"); filter: none; opacity: .65; }
+.bph-commanders .bph-commander.locked img { width: 32px; height: 32px; margin-block: 4px; }
+.bph-commander[aria-pressed="true"] { background: var(--gold); }
+.bph-general-condition { display: flex; align-items: center; gap: 6px; font-size: 16px; line-height: 1.5; }
+.bph-general-condition[hidden] { display: none; }
+.bph-general-condition img { width: 24px; height: 24px; image-rendering: pixelated; }
+.bph-field-dock .bph-recruit-cell:active { transform: none; }
+/* Balance the charge ring's track with empty space so packs stay centered. */
+.bph-field { --above-recruits: calc(var(--dock) + var(--space-2) + 64px + var(--space-2)); }
+.bph-field-dock { position: absolute; inset: auto var(--space-2) calc(var(--dock) + var(--space-2)); display: grid; grid-template-columns: var(--tap-big) minmax(0, 1fr) var(--tap-big); align-items: center; column-gap: var(--space-1); min-height: var(--tap-big); }
+.bph-recruit-strip { --pack-tap: 44px; grid-area: 1 / 2; place-self: end center; display: flex; gap: 1px; width: max-content; max-width: min(calc(6 * var(--pack-tap) + 9px), 100%); padding: 2px; overflow: auto hidden; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: 2px; touch-action: pan-x; pointer-events: auto; background: var(--paper); }
+#app .bph-recruit-cell { display: flex; flex: 0 0 var(--pack-tap); min-width: var(--pack-tap); min-height: 48px; flex-direction: column; align-items: center; padding: 0; scroll-snap-align: start; background: transparent; color: var(--ink); font-size: 14px; line-height: 1; }
+#app .bph-recruit-cell:disabled { opacity: .55; }
+#app .bph-recruit-cell:focus-visible { outline: var(--line) solid var(--red-deep); outline-offset: calc(-1 * var(--line)); }
+.bph-recruit-emblem { position: relative; width: 32px; height: 32px; }
+.bph-recruit-pack { display: block; width: 32px; height: 32px; image-rendering: pixelated; }
+.bph-smithy-art.bph-recruit-badge { position: absolute; right: 0; bottom: 0; transform: scale(.5); transform-origin: bottom right; }
+.bph-recruit-book { width: 32px; height: 32px; image-rendering: pixelated; }
+#app .bph-recruit-cell .bph-smithy-price img { width: 12px; height: 12px; image-rendering: pixelated; }
+/* Empty general seats use the same frame and lower badge as occupied seats. */
+.bph-hire-strip { position: relative; display: flex; gap: var(--space-3); }
+.bph-hire-strip[hidden] { display: none; }
+.bph-hire-cell:active { transform: none; }
+.bph-hire-cell:is(:disabled, [data-hire-status="locked"]) .bph-hire-portrait { opacity: .65; }
+.bph-hire-portrait { display: grid; place-items: center; background: var(--wood); }
+.bph-hire-cell .bph-hire-portrait img { width: 40px; height: 40px; object-fit: contain; image-rendering: pixelated; filter: brightness(0); }
+.bph-hire-reveal .bph-reveal-portrait img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+.bph-hire-portrait b { position: absolute; color: var(--cream); font-size: var(--type-label); line-height: 1; text-shadow: var(--outline); }
+.skill-level-badge.bph-hire-price { display: flex; gap: 2px; white-space: nowrap; }
+.bph-hire-price img { width: 12px; height: 12px; image-rendering: pixelated; }
+#app:not(.level-badge-mockup) .bph-hire-price { top: auto; bottom: 3px; }
+.bph-hire-hint { position: absolute; inset: 0 auto auto calc(100% + var(--space-1)); width: min(120px, calc((min(100vw, 75dvh) - 3 * var(--tap-big) - 2 * var(--space-3)) / 2 - var(--space-2))); padding: var(--space-1); background: var(--paper); color: var(--ink); font-size: 12px; line-height: 1.2; overflow-wrap: anywhere; word-break: keep-all; pointer-events: none; }
+/* Smithy strip: one row of class cells and the wall cell; play keeps running. */
+.bph-smithy-strip { position: absolute; bottom: var(--above-recruits); left: 50%; transform: translateX(-50%); display: flex; gap: 1px; padding: 4px; pointer-events: auto; background: var(--paper); max-width: calc(100% - 8px); }
+.bph-smithy-strip[hidden] { display: none; }
+.bph-smithy-cell { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 39px; min-width: 0; min-height: 48px; padding: 2px 0; font-size: 16px; line-height: 1; background: transparent; color: var(--ink); }
+.bph-smithy-cell:disabled { opacity: 1; }
+.bph-smithy-cell.short .bph-price { opacity: .55; }
+.bph-smithy-art { display: flex; justify-content: center; width: 32px; height: 32px; overflow: hidden; }
+.bph-smithy-art .soldier-group, .bph-smithy-art .soldier-frame { width: 32px; height: 32px; margin: 0; }
+.bph-smithy-art .soldier-frame > img { width: 64px; height: 32px; }
+.bph-smithy-art .soldier-frame.ship { width: 28px; }
+.bph-smithy-art .soldier-frame.ship > img { width: 392px; height: 96px; margin-top: -64px; }
+.bph-smithy-wall { width: 32px; height: 32px; object-fit: cover; object-position: top; image-rendering: pixelated; }
+.bph-smithy-cost { display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 20px; }
+.bph-smithy-price { display: flex; align-items: center; gap: 1px; }
+#app .bph-smithy-cost img { width: 12px; height: 12px; min-width: 0; image-rendering: pixelated; }
+.bph-smithy-cost .bph-price { font-size: 14px; }
+.bph-smithy-pips { display: flex; gap: 1px; }
+.bph-smithy-pips i { width: 6px; height: 4px; background: var(--wood-dark); opacity: .35; }
+.bph-smithy-pips i.on { background: var(--gold); opacity: 1; }
+.bph-recruit-art { width: 48px; height: 48px; image-rendering: pixelated; }
+.bph-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+.bph-offers button { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-1); min-width: 0; font-size: 16px; line-height: 1.5; }
+.bph-offers strong { overflow-wrap: anywhere; font-weight: 400; }
+.bph-pack-art { display: inline-grid; place-items: center; width: var(--tap); height: var(--tap-big); background: var(--wood); color: var(--cream); font-size: var(--type-label); border: var(--line) solid var(--ink); }
+.bph-management footer .menu-button { width: 100%; min-height: var(--tap-big); }
+.bph-actions button { padding: var(--space-2); }
+.bph-actions button[aria-pressed="true"] { background: var(--gold); }
+.bph-actions [data-bph-tab] { --face: 40px; --icon: 20px; display: grid; place-items: center; min-width: var(--tap); min-height: var(--tap); }
+.bph-actions [data-bph-tab] > img { width: 32px; height: 32px; }
+.bph-commander-id .skill-pips { position: static; transform: none; width: fit-content; margin-top: var(--space-1); }
+.bph-general-locks { margin-top: var(--space-4); }
+.bph-general-locks summary { min-height: var(--tap); cursor: pointer; }
+.bph-general-locks ul { list-style: none; padding: 0; margin: 0; }
+.bph-general-locks li { display: flex; align-items: center; gap: var(--space-3); padding-block: var(--space-2); }
+.bph-general-locks img { content: url("/art/icons/codex-undiscovered-silhouette.webp"); flex: none; width: 32px; height: 32px; margin: 8px; object-fit: contain; filter: none; opacity: .7; }
+.bph-general-locks p { margin-block: var(--space-2); line-height: 1.5; }
+.bph-side { margin-top: var(--space-4); }
+.bph-side:not(:empty) { height: 100%; min-height: 0; }
+.bph-side > .bph-web { height: 100%; min-height: 0; max-height: 100%; }
+.bph-management-body:has(> .bph-side:not(:empty)) { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: var(--space-2); overflow: hidden; }
+.bph-management-body:has(> .bph-side:not(:empty)) > :not(.bph-actions, .bph-side) { display: none; }
+.bph-management-body:has(> .bph-side:not(:empty)) > .bph-side { height: auto; min-height: 0; margin-top: 0; }
+.bph-field-host { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.bph-field { position: absolute; inset: 0; }
+/* A building pack's crate: the supply crate icon at 2x on the ground, no plate. It drops in, then blinks for its last seconds. */
+.bph-crates { position: absolute; inset: 0; }
+.bph-crate { position: absolute; display: grid; place-items: center; width: var(--tap-big); height: var(--tap-big); padding: 0; transform: translate(-50%, -50%); background: none; border: 0; box-shadow: none; pointer-events: auto; animation: bph-crate-drop 420ms var(--ui-ease) both; }
+.bph-crate:active { transform: translate(-50%, -50%); }
+.bph-crate img { width: 64px; height: 64px; image-rendering: pixelated; filter: drop-shadow(0 var(--line) var(--cast-deep)); }
+.bph-crate.blink img { animation: bph-crate-blink 400ms steps(2, jump-none) infinite; }
+@keyframes bph-crate-drop { 0% { translate: 0 -64px; opacity: 0; } 60% { translate: 0 4px; opacity: 1; } 100% { translate: 0 0; } }
+@keyframes bph-crate-blink { from { opacity: 1; } to { opacity: .25; } }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-crate { animation: none; }
+/* Recruit reveal: no surface, the drawn sprite three times its face size at the field centre, its name below. */
+.bph-receipt { --reveal: var(--face-big); position: absolute; inset: auto 0 var(--above-recruits) 0; display: grid; place-content: end center; justify-items: center; gap: var(--space-2); pointer-events: none; }
+.bph-field:has(.bph-smithy-strip:not([hidden])) .bph-receipt { bottom: calc(var(--above-recruits) + 72px); }
+.bph-hire-reveal { z-index: 1; translate: 0 -32px; }
+.bph-hire-reveal[hidden] { display: none; }
+.bph-field:has(.bph-hire-reveal:not([hidden])) .bph-receipt:not(.bph-hire-reveal) { visibility: hidden; }
+.bph-reveal-art { position: relative; display: grid; place-items: center; width: var(--reveal); height: var(--reveal); filter: drop-shadow(0 var(--line) var(--cast-deep)); }
+.bph-reveal-art .soldier-group { scale: 2; }
+.bph-reveal-art img { image-rendering: pixelated; }
+/* Keep the source alpha and enough monochrome detail to read compact unit and book outlines. */
+.bph-reveal-art [data-undiscovered] img, .bph-recruit-badge[data-undiscovered] img { filter: brightness(0); }
+.bph-reveal-tome { width: var(--face-big); height: var(--face-big); object-fit: contain; }
+.bph-reveal-count { position: absolute; right: 0; top: var(--space-4); font-size: var(--type-label); line-height: 1; color: var(--gold-light); text-shadow: var(--outline); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bph-reveal-name { max-width: calc(var(--column) - var(--space-6) * 2); font-size: var(--type-label); line-height: 1.2; font-weight: 400; color: var(--cream); text-align: center; text-shadow: var(--outline); overflow-wrap: anywhere; }
+.bph-reveal-reward { font-size: var(--type-name); line-height: 1.5; color: var(--gold-light); text-shadow: var(--outline); font-variant-numeric: tabular-nums; }
+#app .bph-reveal-reward img { width: 1em; height: 1em; margin-right: 2px; vertical-align: -.125em; image-rendering: pixelated; }
+.bph-reveal-new { position: absolute; left: 0; top: var(--space-2); padding: var(--space-1) var(--space-2); rotate: -8deg; font-size: var(--type-name); line-height: 1; color: var(--ink); background: var(--gold-light); border: var(--line) solid var(--ink); box-shadow: var(--line) var(--line) 0 var(--ink); white-space: nowrap; z-index: 2; }
+.bph-landed .bph-reveal-new { animation: bph-new-pop 520ms var(--ui-ease) both; }
+@keyframes bph-new-pop { 0% { scale: 0; } 45% { scale: 1.5; } 70% { scale: .9; } 85% { scale: 1.08; } 100% { scale: 1; } }
+/* New discovery: the approved join-fx gate burst (64px cells, 4x2) at 5x behind the unit, three card glints (48px, 3x2) at 3x around it. */
+.bph-discovery-burst { position: absolute; left: 50%; bottom: calc(var(--space-5) * -1); z-index: -1; width: 320px; height: 320px; margin-left: -160px; background: url("/art/fx/discovery-burst.png") 0 0 / 1280px 640px no-repeat; image-rendering: pixelated; pointer-events: none; animation: bph-burst 760ms step-end both; }
+@keyframes bph-burst { 0% { background-position: 0px 0px; } 12.5% { background-position: -320px 0px; } 25% { background-position: -640px 0px; } 37.5% { background-position: -960px 0px; } 50% { background-position: 0px -320px; } 62.5% { background-position: -320px -320px; } 75% { background-position: -640px -320px; } 87.5% { background-position: -960px -320px; } 100% { background-position: -960px -320px; opacity: 0; } }
+.bph-discovery-glint { position: absolute; z-index: 1; width: 144px; height: 144px; background: url("/art/fx/discovery-glint.png") 0 0 / 432px 288px no-repeat; image-rendering: pixelated; pointer-events: none; opacity: 0; animation: bph-glint 540ms step-end both; }
+.bph-discovery-glint.g1 { left: -72px; top: -56px; }
+.bph-discovery-glint.g2 { right: -76px; top: -8px; animation-delay: 140ms; }
+.bph-discovery-glint.g3 { left: -56px; bottom: -40px; animation-delay: 280ms; }
+@keyframes bph-glint { 0% { background-position: 0px 0px; opacity: 1; } 16.67% { background-position: -144px 0px; } 33.33% { background-position: -288px 0px; } 50% { background-position: 0px -144px; } 66.67% { background-position: -144px -144px; } 83.33% { background-position: -288px -144px; } 100% { background-position: -288px -144px; opacity: 0; } }
+/* Every other draw: the same two sheets at 2x, one glint, shorter. */
+.bph-discovery-burst.small { width: 128px; height: 128px; margin-left: -64px; bottom: calc(var(--space-3) * -1); background-size: 512px 256px; animation: bph-burst-small 560ms step-end both; }
+@keyframes bph-burst-small { 0% { background-position: 0px 0px; } 12.5% { background-position: -128px 0px; } 25% { background-position: -256px 0px; } 37.5% { background-position: -384px 0px; } 50% { background-position: 0px -128px; } 62.5% { background-position: -128px -128px; } 75% { background-position: -256px -128px; } 87.5% { background-position: -384px -128px; } 100% { background-position: -384px -128px; opacity: 0; } }
+/* --burst grows the pop with the landed multiplier (1 at x1, 2 at x5). */
+.bph-discovery-burst.small { scale: var(--burst, 1); transform-origin: 50% 100%; }
+.bph-discovery-glint.small { scale: var(--burst, 1); }
+.bph-discovery-glint.small { width: 96px; height: 96px; right: -40px; top: -16px; background-size: 288px 192px; animation: bph-glint-small 480ms step-end 120ms both; }
+@keyframes bph-glint-small { 0% { background-position: 0px 0px; opacity: 1; } 16.67% { background-position: -96px 0px; } 33.33% { background-position: -192px 0px; } 50% { background-position: 0px -96px; } 66.67% { background-position: -96px -96px; } 83.33% { background-position: -192px -96px; } 100% { background-position: -192px -96px; opacity: 0; } }
+/* x2-3: the gate burst at 3x and two glints at 2x, between the small pop and the full burst. */
+.bph-discovery-burst.medium { width: 192px; height: 192px; margin-left: -96px; bottom: calc(var(--space-4) * -1); background-size: 768px 384px; animation: bph-burst-medium 660ms step-end both; }
+@keyframes bph-burst-medium { 0% { background-position: 0px 0px; } 12.5% { background-position: -192px 0px; } 25% { background-position: -384px 0px; } 37.5% { background-position: -576px 0px; } 50% { background-position: 0px -192px; } 62.5% { background-position: -192px -192px; } 75% { background-position: -384px -192px; } 87.5% { background-position: -576px -192px; } 100% { background-position: -576px -192px; opacity: 0; } }
+.bph-discovery-glint.medium { width: 96px; height: 96px; background-size: 288px 192px; animation: bph-glint-small 480ms step-end both; }
+.bph-discovery-glint.medium.g1 { left: -48px; top: -32px; animation-delay: 80ms; }
+.bph-discovery-glint.medium.g2 { right: -48px; top: 0; animation-delay: 200ms; }
+/* The discovery hits play in place on the recruit result card (owner DM 1794929475 "팝업하지 말랬잖아"): no dialog, no
+   backdrop, no pause. Only the held card itself takes the tap; its rays and burst stay click-through. */
+.bph-receipt.bph-holding .bph-reveal-art { pointer-events: auto; cursor: pointer; touch-action: none; }
+.bph-receipt.bph-holding .bph-reveal-art > * { pointer-events: none; }
+.bph-crack-card, .bph-reveal-portrait { display: grid; place-items: center; width: 100%; height: 100%; }
+.bph-crack-card.bph-pop, .bph-reveal-portrait.bph-pop { animation: bph-discovery-pop 420ms var(--ui-ease) both; }
+/* The cracking card shows only a big question mark centred on the card (owner DM 1794930270). */
+.bph-crack-mark { font-size: calc(var(--reveal) * .75); line-height: 1; font-weight: 400; color: var(--cream); text-shadow: var(--outline); }
+.bph-crack-card.bph-tremor { animation: bph-tremor 260ms steps(4, jump-none) both; }
+@keyframes bph-tremor { 0% { translate: 0 0; rotate: 0deg; } 25% { translate: -6px 3px; rotate: -2.6deg; } 50% { translate: 5px -4px; rotate: 2deg; } 75% { translate: -3px -2px; rotate: -1.2deg; } 100% { translate: 0 0; rotate: 0deg; } }
+@keyframes bph-discovery-pop { 0% { scale: .3; opacity: 0; } 60% { scale: 1.12; opacity: 1; } 100% { scale: 1; } }
+/* BPH's auraRaysPerHit: still frames of the 4x2 discovery-burst sheet behind the card, --ray times the card size. */
+.bph-discovery-ray { position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: -1; width: calc(var(--reveal) * var(--ray)); height: calc(var(--reveal) * var(--ray));
+  background: url("/art/fx/discovery-burst.png") 0 0 / 400% 200% no-repeat; image-rendering: pixelated; pointer-events: none; }
+.bph-receipt:not(.bph-cracking) .bph-discovery-ray { animation: bph-ray-out 600ms ease-out both; }
+@keyframes bph-ray-out { to { opacity: 0; scale: 1.2; } }
+/* A foil card's build-up reads rainbow, the original's rainbow-per-ray on foil: each stacked ray its own hue. */
+.bph-discovery-ray.foil.r1 { filter: hue-rotate(100deg) saturate(1.3); }
+.bph-discovery-ray.foil.r2 { filter: hue-rotate(190deg) saturate(1.3); }
+.bph-discovery-ray.foil.r3 { filter: hue-rotate(280deg) saturate(1.3); }
+/* The opened foil's codex portrait (with the prism) at the plain receipt sprite's size. */
+.bph-reveal-portrait .bph-codex-art { scale: 1.5; }
+.bph-receipt.still .bph-crack-card, .bph-receipt.still .bph-reveal-portrait { animation: none; }
+.bph-receipt.still:not(.bph-cracking) .bph-discovery-ray { animation: none; opacity: 0; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt .bph-crack-card, :root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt .bph-reveal-portrait { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .bph-crack-card, .bph-reveal-portrait { animation: none; }
+}
+/* A barracks draw reveals standing on the barracks. */
+/* A barracks draw keeps the recruit receipt above the button; the tent gets one small glint (owner DM 1794922523). */
+.bph-barracks-spark { position: absolute; width: 0; height: 0; pointer-events: none; }
+.bph-barracks-spark .bph-discovery-glint.small { left: -48px; top: -48px; right: auto; animation-delay: 0ms; }
+/* From the press until the troops enter, the button is locked and dimmed. */
+/* Lasting tactics under the settings and weather buttons, top right: the tactic's book in the charge ring (13 frames, 32px) at 2x. */
+.bph-active-tactics { position: absolute; top: calc(max(var(--space-2), env(safe-area-inset-top)) + 2 * (var(--tap) + var(--space-2))); right: var(--space-1); z-index: 4; display: flex; flex-direction: column; gap: var(--space-1); pointer-events: none; }
+.bph-active-tactic { --ring: 0; display: grid; place-items: center; width: 64px; height: 64px; background: url("/art/icons/charge-ring-plate-strip.webp") calc(var(--ring) * -64px) 0 / 832px 64px no-repeat; image-rendering: pixelated; }
+.bph-active-tactic img { width: 32px; height: 32px; image-rendering: pixelated; }
+/* The tactic that is the cursor now: the same gold glow as a ready barracks (display only). */
+.bph-active-tactic.cursor { filter: drop-shadow(0 0 var(--space-1) var(--gold)); }
+/* Tap-strike volleys, bottom right beside the recruit packs: the shipped arrow (sheet frame 4, pointing down) at 2x in the
+   same charge ring, which fills as the next volley refills; the count of ready volleys sits on it. It takes the tap so a
+   press on it never calls a volley underneath. */
+.bph-tap-charges { --ring: 0; grid-area: 1 / 3; display: grid; place-items: center; width: 64px; height: 64px; pointer-events: auto; background: url("/art/icons/charge-ring-plate-strip.webp") calc(var(--ring) * -64px) 0 / 832px 64px no-repeat; image-rendering: pixelated; }
+.bph-tap-charges i { width: 34px; height: 34px; background: url("/art/fx/arrow.png") -136px 0 / 544px 34px no-repeat; image-rendering: pixelated; }
+.bph-tap-charges b { position: absolute; right: 2px; bottom: 0; font-size: 16px; line-height: 1; color: var(--cream); text-shadow: var(--outline); font-variant-numeric: tabular-nums; }
+.bph-tap-charges.empty i { opacity: .4; }
+.bph-receipt.still .bph-reveal-art, .bph-receipt.still .bph-reveal-name, .bph-receipt.still .bph-reveal-count, .bph-receipt.still .bph-reveal-new { animation: none; }
+.bph-receipt.still { animation-name: ui-fade-in; animation-duration: var(--ui-close); }
+.bph-receipt.still.bph-closing { animation-name: ui-fade-out; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-management { animation: ui-fade-in var(--ui-close) ease-out both; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt .bph-reveal-art, :root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt .bph-reveal-name, :root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt .bph-reveal-count,
+:root:has(#toggle-flashes[aria-pressed="true"]) .bph-receipt::after { animation: none; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt { animation: ui-fade-in var(--ui-close) ease-out both; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-receipt.bph-closing { animation-name: ui-fade-out; }
+@media (prefers-reduced-motion: reduce) {
+  .bph-spinning .bph-reveal-art, .bph-landed .bph-reveal-art, .bph-landed .bph-reveal-name, .bph-landed .bph-reveal-count, .bph-landed .bph-reveal-new, .bph-landed::after { animation: none; }
+  .bph-discovery-burst, .bph-discovery-glint { display: none; }
+  .bph-crate { animation: none; }
+  .bph-management, .bph-receipt { animation: ui-fade-in var(--ui-close) ease-out both; }
+  .bph-closing { animation-name: ui-fade-out; }
+}
+.bph-screen { --type-heading: 22px; }
+.bph-back { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 44px; padding: var(--space-1) var(--space-3) var(--space-1) var(--space-2); font-size: var(--type-fine); }
+.title-menu.has-codex { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.title-menu.has-codex .menu-button:not(.primary) b { width: 100%; text-align: center; white-space: nowrap; }
+.bph-codex-news { position: absolute; top: var(--space-1); right: var(--space-1); min-width: var(--space-5); height: var(--space-5); padding: 0 var(--space-1); background: var(--red); border: var(--line) solid var(--gold-light); color: var(--cream); font-size: var(--type-fine); line-height: calc(var(--space-5) - var(--line) * 2); text-align: center; text-shadow: none; }
+.bph-commander-info { display: grid; grid-template-columns: var(--face) minmax(0, 1fr); align-items: center; gap: var(--space-2) var(--space-3); margin-block: var(--space-2) var(--space-3); padding: var(--space-3); background: var(--paper-light); border: var(--line) solid var(--wood); }
+.bph-commander-face { width: var(--face); height: var(--face); }
+.bph-commander-id { display: grid; gap: var(--space-1); min-width: 0; }
+.bph-commander-id strong { font-size: var(--type-heading); font-weight: 400; line-height: 1.2; }
+.bph-commander-id p { margin: 0; line-height: 1.4; color: var(--wood-dark); word-break: keep-all; }
+.bph-commander-info > .bph-skill-card { grid-column: 1 / -1; }
+.bph-facts { display: grid; gap: var(--space-1); margin: 0; }
+.bph-facts > div { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); min-height: 28px; }
+.bph-facts dt { display: grid; grid-template-columns: 32px auto; align-items: center; gap: var(--space-1); min-width: 0; }
+.bph-facts dt img { justify-self: center; }
+.bph-facts dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bph-skill-card { display: grid; gap: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--paper); border: var(--line) solid var(--wood); }
+.bph-skill-card strong { display: flex; align-items: center; gap: var(--space-2); font-weight: 400; }
+.bph-skill-card p { margin: 0; line-height: 1.4; }
+.bph-skill-card.is-inactive { background: var(--paper-shade); color: var(--wood-dark); }

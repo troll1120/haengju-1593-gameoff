@@ -1,0 +1,63 @@
+html:not([lang="en"]) [data-feedback-en],
+html[lang="en"] [data-feedback-ko] {
+  display: none;
+}
+
+#survival-survey-privacy:lang(ko) {
+  word-break: keep-all;
+}
+
+#survival-survey {
+  border-top: var(--hair) solid var(--wood);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  color: var(--ink);
+}
+
+#survival-survey form {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--type-fine);
+}
+
+#survival-survey fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#survival-survey textarea {
+  width: 100%;
+  padding: var(--space-2);
+  color: var(--ink);
+  background: var(--paper-light);
+  border: var(--line) solid var(--wood);
+  resize: vertical;
+  font: inherit;
+}
+
+#survival-survey .feedback-ratings label {
+  min-width: 44px;
+}
+
+.feedback-close {
+  min-width: var(--tap);
+  min-height: var(--tap);
+  padding-inline: var(--space-2);
+  color: var(--ink);
+  background: var(--paper-light);
+  border: var(--hair) solid var(--wood);
+  font: inherit;
+  cursor: pointer;
+}
+
+.feedback-close:hover,
+.feedback-close:active {
+  background: var(--hanji);
+}
+
+#survival-survey :is(button, textarea, input, a):focus-visible {
+  outline: var(--stroke) solid var(--red-deep);
+  outline-offset: var(--line);
+}

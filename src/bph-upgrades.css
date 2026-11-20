@@ -1,0 +1,88 @@
+.bph-web {
+  --bph-ink: #39251b; --bph-paper: #eedab2; --bph-light: #f9e9c4;
+  --bph-line: #68442b; --bph-accent: #862e25; --bph-gold: #d7ad54;
+  --bph-gap: 8px; --bph-pad: 12px; --bph-tap: 44px;
+  position: relative; box-sizing: border-box; height: 100%; max-height: 100dvh; min-height: 0; width: 100%;
+  container-type: size;
+  display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr);
+  overflow: hidden; color: var(--bph-ink); background: var(--bph-paper);
+  font: 17px/1.45 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-variant-numeric: tabular-nums; color-scheme: light;
+  animation: ui-fade-in var(--ui-open) var(--ui-ease) both;
+}
+.bph-web *, .bph-web *::before, .bph-web *::after { box-sizing: border-box; }
+.bph-relics h3, .bph-relics p { margin: 0; }
+.bph-relics h3 { font-size: 22px; margin-bottom: 8px; }
+.bph-relics p { overflow-wrap: anywhere; word-break: keep-all; }
+.bph-relics button, .bph-prep-tabs button {
+  min-height: var(--bph-tap); font: inherit; color: var(--bph-ink); cursor: pointer;
+  border: 1px solid var(--bph-line); border-radius: 0; background: var(--bph-light); padding: 8px 12px;
+}
+.bph-relics button:hover, .bph-prep-tabs button[aria-pressed="true"] {
+  background: var(--bph-gold); color: var(--bph-ink);
+}
+.bph-relics button:active { transform: none; }
+.bph-relics button:disabled, .bph-prep-tabs button:disabled {
+  cursor: default; background: var(--bph-paper); color: var(--bph-line);
+}
+.bph-web :focus-visible { outline: 3px solid var(--bph-accent); outline-offset: 2px; }
+.bph-web ::selection { background: var(--bph-gold); color: var(--bph-ink); }
+.bph-web.bph-prep-upgrades {
+  background: var(--dancheong) top / 100% var(--band) no-repeat,
+    var(--dancheong) bottom / 100% var(--band) no-repeat, var(--hanji);
+  padding-block: var(--band);
+  font-family: inherit;
+}
+[data-skin="hanji"] .bph-web.bph-prep-upgrades { background: none; }
+
+/* Relics still uses the original panel and tile skin. */
+.bph-web .bph-web-node {
+  position: absolute; width: 44px; height: 44px; padding: 0; z-index: 1;
+  font-size: 20px; border: 0; background: none; display: grid; place-items: center;
+}
+.bph-web .bph-web-node.available { background: none; color: #39251b; font-weight: 700; filter: drop-shadow(0 0 3px var(--gold-light)); }
+.bph-web .bph-web-node.bought { background: none; color: var(--bph-light); }
+.bph-web .bph-web-node.locked { background: none; color: var(--bph-line); filter: brightness(.5) saturate(.4); }
+.bph-web-node img { width: auto; height: auto; min-width: 16px; min-height: 16px; image-rendering: pixelated; position: relative; }
+.bph-web-check { position: absolute; right: 0; bottom: -2px; width: 24px; height: 24px; background: url("/art/icons/bph-node-check.webp") center / 24px 24px no-repeat; image-rendering: pixelated; pointer-events: none; z-index: 2; }
+.bph-web .bph-web-badge { position: absolute; left: -10px; top: -10px; z-index: 2; }
+#app .bph-web .bph-web-badge, .bph-web .bph-web-badge { width: 24px; height: 24px; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-web { animation: ui-fade-in var(--ui-close) ease-out both; }
+@media (prefers-reduced-motion: reduce) { .bph-web { animation: ui-fade-in var(--ui-close) ease-out both; } }
+
+.bph-web-wallet {
+  display: flex; align-items: center; gap: var(--space-1); min-height: var(--sprite);
+  padding-inline: var(--space-1); font-size: 16px; font-weight: 600; white-space: nowrap;
+}
+.bph-web-wallet img { flex: none; width: 24px; height: 24px; image-rendering: pixelated; }
+.bph-map-header { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 2px 4px; align-items: center; padding: 2px 6px 6px; }
+.bph-map-title { font-size: var(--type-label); padding-left: 4px; white-space: nowrap; }
+/* 48px leaves the rotated plus's arm tips on the frame's inner face, clear of its 16px corner pieces. */
+.bph-map-close { width: 48px; height: 48px; }
+/* Title, a 4-digit wallet and the close button need about 330px in one row; narrower panels move the wallet under the title. */
+@container (width < 340px) {
+  .bph-map-header { grid-template-columns: minmax(0, 1fr) auto; }
+  .bph-map-title { grid-area: 1 / 1; font-size: min(var(--type-label), 12cqi); }
+  .bph-map-close { grid-area: 1 / 2; }
+  .bph-web-wallet { grid-area: 2 / 1 / 3 / -1; justify-self: start; }
+}
+.bph-map-close img { transform: rotate(45deg); }
+.bph-prep-tabs {
+  grid-column: 1 / -1; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 3px;
+}
+.bph-prep-tabs button {
+  min-width: 0; padding: 3px 0; font-size: clamp(12px, 4.1cqw, 16px); line-height: 1.15;
+  border: var(--line) solid var(--wood); background: var(--paper-light);
+  overflow-wrap: anywhere;
+}
+.bph-prep-tabs button[aria-pressed="true"] { background: var(--red-deep); color: var(--cream); }
+.bph-prep-tabs button[data-locked] { background: var(--paper-shade); }
+.bph-prep-tabs .bph-prep-tab-lock {
+  display: none; width: 12px; height: 12px; margin-inline-start: 2px;
+  vertical-align: middle; image-rendering: pixelated; filter: grayscale(1) brightness(.55);
+}
+.bph-prep-tabs button[data-locked] .bph-prep-tab-lock { display: inline-block; }
+.bph-prep-content {
+  min-width: 0; min-height: 0; overflow: auto;
+  padding: var(--space-2) var(--bph-pad) var(--bph-pad);
+}

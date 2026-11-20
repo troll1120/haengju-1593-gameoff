@@ -1,0 +1,16 @@
+{
+  "tapStrike": { "charges": 3, "rechargeSeconds": 4, "travelSeconds": 0.45, "radius": 60, "damage": 6, "fireSeconds": 3 },
+  "tapAim": { "dragCss": 10, "liftCss": 56 },
+  "cursorTactics": {
+    "everySeconds": { "Tome_Thunderstorm": 1, "Tome_Earthquake": 2, "Tome_DragonsCall": 0.25, "Tome_Blizzard": 1 },
+    "defaultSeconds": 30
+  },
+  "tacticStrikeShow": { "boltMs": 360, "foot": 0.4, "quakeAfterMs": 300, "quakeFadeMs": 200, "maxBolts": 6, "maxQuakes": 3 },
+  "wallBattery": {
+    "rules": { "count": [2, 2, 3, 4, 6, 8], "waves": [3, 3, 3, 4, 6, 8], "interval": 18, "flight": 9,
+      "radius": [64, 64, 64, 64, 64, 64], "arc": 100, "power": [10, 10, 10, 12, 23, 40], "siegeScaleCap": 55,
+      "push": 24, "passiveEvery": [0, 150, 120, 105, 90, 75], "passiveScale": 0.12, "passiveReach": [200, 64, 112, 152, 200, 200] },
+    "show": { "smoulder": 0.5, "burn": 0.8, "spit": 0.92 }
+  },
+  "fieldCrate": { "life": 20, "blink": 5, "gap": 30, "bank": 24 }
+}

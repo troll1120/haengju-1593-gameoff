@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#39281d" />
+    <link rel="icon" href="data:," />
+    <link rel="preload" href="./fonts/DNFBitBitv2.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="./art/scenes/camp.png" as="image" fetchpriority="high" />
+    <title>Haengju 1593</title>
+  </head>
+  <body>
+    <main id="app" class="loading titled fronted">
+      <b id="clock" class="field-clock">00:00</b>
+      <button id="pause" class="help-button icon-button" aria-label="메뉴" data-ko-aria-label="메뉴"><img data-icon="gear" alt="" /></button>
+      <aside id="synergies" aria-label="병과 시너지" data-ko-aria-label="병과 시너지" hidden></aside>
+      <section id="arena" aria-label="행주산성 전장" data-ko-aria-label="행주산성 전장"><div id="strip" class="strip" hidden></div></section>
+      <div id="xp" class="xp" role="progressbar" aria-label="경험치" data-ko-aria-label="경험치" aria-valuemin="0" aria-valuemax="100"><i></i></div>
+      <output id="mastery-earned" class="mastery-earned" aria-live="off" hidden><img data-icon="mastery" width="16" height="16" alt="" /><span id="mastery-earned-value"></span></output>
+      <div class="skills">
+        <div id="skills" class="skill-cards" role="group" aria-label="필살기" data-ko-aria-label="필살기"></div>
+        <div id="general-hires"></div>
+      </div>
+      <div id="cut-in" class="cut-in" aria-hidden="true" hidden><img alt="" /><strong></strong></div>
+      <div id="start-loading" class="start-loading" role="progressbar" aria-label="전투 준비" data-ko-aria-label="전투 준비" aria-valuemin="0" aria-valuemax="100" hidden><img alt="" /><span><i></i></span></div>
+      <aside id="building" class="building wood-frame" hidden><div id="recruits" class="chips" aria-label="막사 모집" data-ko-aria-label="막사 모집"></div><div id="drills" class="chips drills" aria-label="대장간 강화" data-ko-aria-label="대장간 강화"></div></aside>
+      <section id="overlay" class="overlay" aria-live="polite">
+        <div id="title" class="title">
+          <div id="logo" class="curtain">
+            <span class="logo"><span class="ribbon">HISTORY WAR</span><strong><span data-ko="행주">HAENGJU</span><b>1593</b></strong></span>
+            <nav class="title-menu wood-frame">
+              <button id="start" class="menu-button primary wood-frame tile-frame" aria-label="Survival" data-ko-aria-label="서바이벌" disabled aria-busy="true"><img data-icon="play" alt="" /><b>Loading 0%</b></button>
+              <button id="story-mode" class="menu-button wood-frame tile-frame"><b data-ko="스토리 모드">Story Mode</b></button>
+              <button id="barracks-open" class="menu-button wood-frame tile-frame" aria-label="Upgrades" data-ko-aria-label="강화"><span class="camp"><img src="./art/props/tent.png" alt="" /></span><b data-ko="강화">Upgrades</b><img class="rise" data-icon="up" data-tone="gold" alt="" /><img id="barracks-pip" class="pip" data-icon="plus" alt="" hidden /></button>
+              <button id="title-settings" class="menu-button wood-frame tile-frame" aria-label="Settings" data-ko-aria-label="설정"><img data-icon="gear" alt="" /><b data-ko="설정">Settings</b></button>
+            </nav>
+          </div>
+          <button id="story" class="curtain story" aria-label="건너뛰기" data-ko-aria-label="건너뛰기" hidden>
+            <span class="beat"><img class="scene" src="./art/scenes/camp.png" alt="" /></span>
+            <span class="beat"><img class="face" src="./art/portraits/ukita.png" alt="" /><span class="horde"><span class="mini"><img src="./art/units/yari.png" alt="" /></span><span class="mini"><img src="./art/units/teppo.png" alt="" /></span><span class="mini"><img src="./art/units/samurai.png" alt="" /></span><span class="mini"><img src="./art/units/yari.png" alt="" /></span><span class="mini"><img src="./art/units/samurai.png" alt="" /></span><span class="mini"><img src="./art/units/yari.png" alt="" /></span><span class="mini"><img src="./art/units/teppo.png" alt="" /></span><span class="mini"><img src="./art/units/yari.png" alt="" /></span></span></span>
+            <span class="beat"><img class="face" src="./art/portraits/gwon_yul.png" alt="" /><span class="vow"><img data-icon="hourglass" alt="" /><img src="./art/icons/png-terrain_fort.webp" alt="" /></span></span>
+            <img class="touch-cue" data-icon="touch" alt="" />
+          </button>
+          <div id="pick" hidden>
+            <div id="starter-cards" aria-label="시작 장군 선택" data-ko-aria-label="시작 장군 선택"></div>
+            <button id="pick-back" class="icon-button big" aria-label="처음 화면" data-ko-aria-label="처음 화면"><img data-icon="back" alt="" /></button>
+          </div>
+          <div id="barracks" class="panel wood-frame" hidden>
+            <div id="barracks-list" aria-label="강화" data-ko-aria-label="강화"></div>
+            <div class="menu"><button id="barracks-close" class="icon-button big" aria-label="처음 화면" data-ko-aria-label="처음 화면"><img data-icon="back" alt="" /></button><button id="barracks-play" class="icon-button big" aria-label="다음 전투" data-ko-aria-label="다음 전투"><img data-icon="play" alt="" /></button><button id="endless" class="icon-button big" aria-label="무한 전투" data-ko-aria-label="무한 전투" hidden><img data-icon="infinity" alt="" /></button></div>
+          </div>
+        </div>
+        <div id="intro" class="panel wood-frame" hidden>
+          <button id="settings-close" class="icon-button panel-close" aria-label="닫기" data-ko-aria-label="닫기" hidden><b aria-hidden="true">X</b></button>
+          <div class="panel-body">
+            <div class="menu">
+              <button id="resume" class="icon-button big" aria-label="계속" data-ko-aria-label="계속"><img data-icon="resume" alt="" /><b data-ko="계속">계속</b></button>
+              <button id="toggle-sound" class="icon-button big toggle-sound" aria-label="소리" data-ko-aria-label="소리" aria-pressed="true"><img data-icon="sound" alt="" /><b data-ko="소리">소리</b><small class="toggle-state"></small></button>
+              <button id="toggle-lang" class="icon-button big" aria-label="Language" data-ko-aria-label="언어"><img data-icon="lang-en" alt="" /><b data-ko="언어">Language</b><small id="menu-language">English</small></button>
+              <button id="toggle-motion" class="icon-button big" aria-label="흔들림과 멈칫 끄기" data-ko-aria-label="흔들림과 멈칫 끄기" aria-pressed="false"><img data-icon="motion" alt="" /><b data-ko="흔들림">흔들림</b><small class="toggle-state"></small></button>
+              <button id="toggle-flashes" class="icon-button big" aria-label="번쩍임 끄기" data-ko-aria-label="번쩍임 끄기" aria-pressed="false"><img data-icon="flash" alt="" /><b data-ko="번쩍임">번쩍임</b><small class="toggle-state"></small></button>
+              <button id="toggle-numbers" class="icon-button big" aria-label="피해 숫자" data-ko-aria-label="피해 숫자"><img data-icon="attack" alt="" /><b data-ko="피해 숫자">피해 숫자</b><small class="toggle-state"></small></button>
+              <button id="home" class="icon-button big" aria-label="처음 화면" data-ko-aria-label="처음 화면"><img data-icon="home" alt="" /><b data-ko="처음">처음</b></button>
+            </div>
+            <div class="audio-volumes">
+              <label for="volume-bgm"><span data-ko="배경음악">배경음악</span></label>
+              <input id="volume-bgm" type="range" min="0" max="100" value="100" aria-label="배경음악" data-ko-aria-label="배경음악" />
+              <output id="volume-bgm-value" for="volume-bgm">100%</output>
+              <label for="volume-sfx"><span data-ko="효과음">효과음</span></label>
+              <input id="volume-sfx" type="range" min="0" max="100" value="100" aria-label="효과음" data-ko-aria-label="효과음" />
+              <output id="volume-sfx-value" for="volume-sfx">100%</output>
+            </div>
+            <p id="player-analytics-notice" class="feedback-notice" data-ko="익명 플레이 통계를 수집합니다" hidden>익명 플레이 통계를 수집합니다</p>
+            <a id="settings-feedback" class="menu-button feedback-action"><span data-ko="의견 보내기">의견 보내기</span></a>
+            <button id="reset-records" class="icon-button panel-action" data-ko="기록 초기화" hidden>기록 초기화</button>
+          </div>
+        </div>
+        <div id="choice" hidden><div id="cards"></div></div>
+        <div id="result" class="panel wood-frame" hidden>
+          <div class="story-illustration"><img class="scene" src="./art/scenes/camp.png" alt="" /><img class="commander" src="./art/portraits/gwon_yul.png" alt="" /></div>
+          <div id="result-title" class="result-icon"></div>
+          <div class="stats"><span class="stat"><img class="ico" data-icon="hourglass" data-tone="ink" alt="" /><b id="result-time"></b></span><span class="stat"><img class="ico" data-icon="sword" alt="" /><b id="result-kills"></b></span><span class="stat"><img class="ico" data-icon="coin" data-tone="gold" alt="" /><b id="result-score"></b></span><span class="stat"><img class="ico" data-icon="mastery" data-tone="ink" alt="" /><span class="bar merit-bar"><i id="result-merit-fill"></i></span><b id="result-merit" hidden></b></span></div>
+          <div id="result-damage"></div>
+          <div class="menu"><button id="retry" class="icon-button big icon-only" aria-label="출전 준비" data-ko-aria-label="출전 준비"><img data-icon="retry" alt="" /></button><button id="result-upgrade" class="icon-button big icon-only" aria-label="강화망" data-ko-aria-label="강화망"><span class="camp"><img src="./art/props/tent.png" alt="" /><img class="rise" data-icon="up" data-tone="gold" alt="" /></span></button><button id="result-endless" class="icon-button big" aria-label="무한으로 계속" data-ko-aria-label="무한으로 계속" hidden><img data-icon="infinity" alt="" /><b data-ko="무한으로 계속">무한으로 계속</b></button></div>
+          <a id="result-feedback" class="menu-button feedback-action"><span data-ko="의견 보내기">의견 보내기</span></a>
+          <section id="survival-survey" aria-labelledby="survival-survey-title" hidden>
+            <div class="feedback-heading">
+              <h2 id="survival-survey-title"><span data-feedback-ko>이번 생존전 설문</span><span data-feedback-en>Survival survey</span></h2>
+              <button id="survival-survey-close" class="feedback-close" type="button"><span data-ko="닫기">닫기</span></button>
+            </div>
+            <form id="survival-survey-form" method="dialog" autocomplete="off">
+              <fieldset>
+                <legend><span data-feedback-ko>이번 판은 얼마나 재미있었나요?</span><span data-feedback-en>How much fun was this run?</span></legend>
+                <div class="feedback-ratings">
+                  <label><input type="radio" name="fun_rating" value="1" required /> 1</label>
+                  <label><input type="radio" name="fun_rating" value="2" /> 2</label>
+                  <label><input type="radio" name="fun_rating" value="3" /> 3</label>
+                  <label><input type="radio" name="fun_rating" value="4" /> 4</label>
+                  <label><input type="radio" name="fun_rating" value="5" /> 5</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend><span data-feedback-ko>난이도</span><span data-feedback-en>Difficulty</span></legend>
+                <div class="feedback-ratings">
+                  <label><input type="radio" name="difficulty" value="easy" required /> <span data-feedback-ko>너무 쉬움</span><span data-feedback-en>Too easy</span></label>
+                  <label><input type="radio" name="difficulty" value="right" /> <span data-feedback-ko>적당함</span><span data-feedback-en>Just right</span></label>
+                  <label><input type="radio" name="difficulty" value="hard" /> <span data-feedback-ko>너무 어려움</span><span data-feedback-en>Too hard</span></label>
+                </div>
+              </fieldset>
+              <p id="survival-survey-privacy" class="feedback-hint"><span data-feedback-ko>분석에는 점수·난이도와 의견의 주제만 보냅니다.</span><span data-feedback-en>Only your rating, difficulty choice, and feedback topics are sent to analytics.</span></p>
+              <label for="survival-survey-liked"><span data-feedback-ko>좋았던 점 (선택)</span><span data-feedback-en>What you liked (optional)</span></label>
+              <textarea id="survival-survey-liked" rows="2" maxlength="400" aria-describedby="survival-survey-privacy"></textarea>
+              <label for="survival-survey-disliked"><span data-feedback-ko>아쉬웠던 점 (선택)</span><span data-feedback-en>What you disliked (optional)</span></label>
+              <textarea id="survival-survey-disliked" rows="2" maxlength="400" aria-describedby="survival-survey-privacy"></textarea>
+              <button class="menu-button feedback-action" type="submit" data-ko="보내기">보내기</button>
+            </form>
+            <a id="survey-feedback" class="feedback-community" target="_blank" rel="noopener noreferrer" hidden><span data-ko="의견 보내기">의견 보내기</span></a>
+          </section>
+        </div>
+      </section>
+      <dialog id="reset-dialog" class="panel wood-frame pixel-dialog" aria-labelledby="reset-warning">
+        <p id="reset-warning" data-ko="모든 기록이 지워집니다. 초기화할까요?">모든 기록이 지워집니다. 초기화할까요?</p>
+        <form method="dialog" class="dialog-actions">
+          <button class="icon-button panel-action" data-ko="취소" autofocus>취소</button>
+          <button id="confirm-reset" class="icon-button panel-action danger" type="button" data-ko="초기화">초기화</button>
+        </form>
+      </dialog>
+      <dialog id="story-dialog" class="panel wood-frame pixel-dialog" aria-labelledby="story-message">
+        <p id="story-message" data-ko="스토리모드는 준비중입니다">스토리모드는 준비중입니다</p>
+        <form method="dialog" class="dialog-actions">
+          <button class="icon-button panel-action" data-ko="확인" autofocus>확인</button>
+        </form>
+      </dialog>
+      <div id="notice" class="ribbon" role="status"><img class="ico" alt="" /></div>
+    </main>
+    <div id="screen-flash" aria-hidden="true" hidden></div>
+    <dialog id="player-feedback" class="panel wood-frame feedback-dialog" aria-labelledby="player-feedback-title">
+      <div class="feedback-heading">
+        <h2 id="player-feedback-title" data-ko="의견 보내기">의견 보내기</h2>
+        <button id="player-feedback-close" class="icon-button" type="button" aria-label="닫기" data-ko-aria-label="닫기"><b aria-hidden="true">X</b></button>
+      </div>
+      <form id="player-feedback-form" method="dialog" autocomplete="off">
+        <label for="player-feedback-text" data-ko="의견">의견</label>
+        <p id="player-feedback-hint" class="feedback-hint" data-ko="이름, 이메일, 전화번호 등 개인정보는 입력하지 마세요.">이름, 이메일, 전화번호 등 개인정보는 입력하지 마세요.</p>
+        <p id="player-feedback-readers" class="feedback-hint" data-ko="보내신 글은 개발팀이 읽습니다">보내신 글은 개발팀이 읽습니다</p>
+        <textarea id="player-feedback-text" rows="4" maxlength="400" aria-describedby="player-feedback-hint player-feedback-readers"></textarea>
+        <fieldset>
+          <legend data-ko="재미 점수">재미 점수</legend>
+          <div class="feedback-ratings">
+            <label><input type="radio" name="fun_rating" value="1" required /> 1</label>
+            <label><input type="radio" name="fun_rating" value="2" /> 2</label>
+            <label><input type="radio" name="fun_rating" value="3" /> 3</label>
+            <label><input type="radio" name="fun_rating" value="4" /> 4</label>
+            <label><input type="radio" name="fun_rating" value="5" /> 5</label>
+          </div>
+        </fieldset>
+        <button class="menu-button feedback-action" type="submit" data-ko="보내기">보내기</button>
+      </form>
+      <p id="player-feedback-thanks" tabindex="-1" data-ko="고마워요" hidden>고마워요</p>
+      <a class="feedback-community" href="https://bugholegames.itch.io/haengju-1593" target="_blank" rel="noopener noreferrer">itch.io</a>
+    </dialog>
+    <script type="module" src="./src/bootstrap.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+// Forced-x1 controls with no relics: 20 ticks before purchase and 600 after.
+// Recorded at eeda7b8b with the 6e7fa3a6 four-spearman roster and independent kill drops.
+export const bphRecruitControlHashes = {
+  "1": "f49517940ad6894da974b587ec695ee983401f05e1f95f8b23679e08b25cfe2c",
+  "2": "dc52697447d5ba9f2ffb8f41f51dc926ef923d77d65f1250e3684e0bfba8220b",
+  "3": "66f929964fa261d777c7a72650f76d3f716aedf06a45704c2cfb3fd74704ce96",
+  "4": "270f37a84e9dde6ae64cefbd7344d6b86a5a149296dc0659bd859255059478f9",
+  "5": "1472b975431a49baebea55d3e9392cd2197f722b991d91285a67a27281383eb5",
+  "6": "d9dc21aac4392683b04cbb50729313e876f737e1ed6d0ae5ec924ab6276d5c83",
+  "7": "0dc2fff6881b64f32d14b25ff9cfac31ec99393056d42ab227a7032256f2adb8",
+  "8": "182ae7a9bc210c380f1864e19484cbc2942189e040e539aabcfcf624f2dc45eb",
+  "9": "d7afaefd9a4a01b7b7eb7f485724071faa3cc591140b5424c8251ce7745417eb",
+  "10": "ab1ed6feb7756e1b7327b03e14f43fe8c59c390f5a3c4d8137c09fd6a92a3092",
+  "11": "b64c819e60599485192af4750024611b635ea99c8a36514963cb231a8b03dddc",
+  "12": "3b6fa74d48ed9f095ebd5301a5e8466ada2c6da9ff3fbcafa8c8dcd1ed7291c3",
+};

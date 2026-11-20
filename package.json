@@ -1,0 +1,14 @@
+{
+  "name": "haengju-castle-sample",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --bun vite --host 127.0.0.1 --port 19497",
+    "test:startup": "bun --bun vite build --outDir review-dist && bun test ./scripts/startup.test.ts ./scripts/default-language.test.ts --timeout 30000",
+    "build": "bun x --no-install tsc --noEmit && bun --bun vite build",
+    "build:review": "bun x --no-install tsc --noEmit && bun --bun vite build --outDir review-dist",
+    "test": "bun test ./src ./scripts/serve.test.ts --timeout 120000"
+  },
+  "dependencies": { "phaser": "3.90.0" },
+  "devDependencies": { "vite": "7.3.7", "typescript": "5.9.3", "@types/bun": "^1.3.0" }
+}

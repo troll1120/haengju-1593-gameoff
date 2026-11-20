@@ -1,0 +1,82 @@
+.ur-face { position: relative; display: inline-grid; place-items: center; flex: none; width: var(--ur-art, 48px); height: var(--ur-art, 48px); }
+.ur-face .ur-crop { display: block; overflow: hidden; width: 100%; height: 100%; }
+#app .ur-face .ur-art { display: block; width: 100%; height: 100%; max-width: none; object-fit: contain; image-rendering: pixelated; }
+#app .ur-face.unit .ur-art { width: 200%; object-fit: fill; }
+#app .ur-face.ship .ur-art { width: 1400%; height: 300%; margin-top: -200%; object-fit: fill; }
+#app .ur-face .ur-badge {
+  position: absolute; left: 0; top: 0; max-width: none; object-fit: contain; image-rendering: pixelated;
+  width: var(--ur-badge, calc(var(--ur-art, 48px) / 2)); height: var(--ur-badge, calc(var(--ur-art, 48px) / 2));
+}
+
+/* Card and general detail still use the grid-row panel. Placement tips sit above the scroller. */
+.bph-placement-tooltip:popover-open {
+  position: fixed; inset: auto; margin: 0; box-sizing: border-box;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline;
+  width: max-content; min-width: min(168px, calc(100vw - 16px)); max-width: min(250px, calc(100vw - 16px));
+  gap: 4px 12px; padding: 8px 10px; border: var(--line) solid var(--wood);
+  background: var(--paper-light); color: var(--ink); box-shadow: 2px 3px 0 #39251b55;
+  font-size: var(--type-fine, 12px); line-height: 1.3; overflow-wrap: anywhere; word-break: keep-all;
+}
+.bph-placement-tooltip strong { font-weight: 400; font-size: 14px; }
+.bph-placement-level { white-space: nowrap; }
+.bph-placement-effect { grid-column: 1 / -1; margin: 0; }
+.bph-placement-cost { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.bph-placement-cost span { display: inline-flex; align-items: center; gap: 4px; }
+.bph-placement-cost img { width: 16px; height: 16px; image-rendering: pixelated; }
+.bph-placement-tooltip[data-short="true"] .bph-placement-cost { color: var(--red-deep); }
+.bph-placement-why { grid-column: 1 / -1; margin: 0; font-weight: 400; }
+.bph-placement-conditions { grid-column: 1 / -1; margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+.bph-placement-buy {
+  grid-column: 1 / -1; margin-top: 2px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 6px 10px; border: var(--line) solid var(--wood); background: var(--wood); color: var(--paper-light);
+  font-size: var(--type-fine, 12px); font-weight: 700; border-radius: 6px;
+}
+.bph-placement-buy img { width: 14px; height: 14px; image-rendering: pixelated; }
+.bph-placement-buy:disabled { opacity: .45; }
+@media (prefers-reduced-motion: no-preference) {
+  .bph-placement-tooltip[data-short="true"] { animation: bph-placement-denied .18s ease-out; }
+}
+@keyframes bph-placement-denied { 30% { translate: -2px; } 65% { translate: 2px; } }
+
+.bph-web > .bph-prep-detail { position: absolute; inset: 0; grid-row: 2 / 3; grid-column: 1 / 2; z-index: 2; }
+.bph-prep-detail {
+  container: prep-detail / inline-size;
+  box-sizing: border-box; min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain;
+  display: grid; align-content: start; gap: var(--space-3);
+  padding: var(--space-2); border: var(--line) solid var(--wood); background: var(--paper-light);
+  color: var(--ink); line-height: 1.3; word-break: keep-all;
+}
+.bph-prep-detail-head {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "portrait copy close";
+  gap: var(--space-2); align-items: start;
+}
+.bph-prep-detail-portrait {
+  --ur-art: var(--face); --ur-badge: 24px;
+  grid-area: portrait; display: grid; place-items: center; box-sizing: border-box;
+  min-width: calc(var(--face) + var(--space-2)); min-height: calc(var(--face) + var(--space-2)); padding: var(--space-1);
+  background: var(--paper); box-shadow: inset 0 0 0 var(--line) var(--wood);
+}
+.bph-prep-detail-copy {
+  grid-area: copy; align-self: stretch; display: grid; align-content: start; gap: var(--space-1); min-width: 0;
+  padding: var(--space-2); background: var(--paper); box-shadow: inset 0 0 0 var(--line) var(--wood-pale);
+}
+.bph-prep-detail .bph-prep-detail-title { margin: 0; font-size: var(--type-heading, 22px); font-weight: 400; line-height: 1.2; overflow-wrap: anywhere; }
+.bph-prep-detail-text { margin: 0; font-size: var(--type-fine); overflow-wrap: anywhere; }
+.bph-prep-detail .bph-prep-detail-close {
+  grid-area: close; display: grid; place-items: center; box-sizing: border-box;
+  width: var(--bph-tap, 44px); height: var(--bph-tap, 44px); min-height: 0; padding: 0;
+  border: var(--line) solid var(--wood); background: var(--paper);
+}
+.bph-prep-detail-close img { transform: rotate(45deg); }
+.bph-prep-detail-groups { display: grid; gap: var(--space-3); min-width: 0; }
+.bph-prep-detail-groups > * + * { padding-top: var(--space-3); border-top: var(--line) solid var(--wood-pale); }
+
+/* On the narrowest phones the portrait halves (the 2x sprites at native pixels) and the description runs under the close button, so the strips stay in view. */
+@container prep-detail (width < 244px) {
+  .bph-prep-detail-head { grid-template-areas: "portrait title close" "portrait text text"; row-gap: var(--space-1); }
+  .bph-prep-detail-portrait { min-width: calc(var(--face) / 2 + var(--space-2)); min-height: calc(var(--face) / 2 + var(--space-2)); }
+  .bph-prep-detail-portrait > * { zoom: .5; }
+  .bph-prep-detail-copy { display: contents; }
+  .bph-prep-detail .bph-prep-detail-title { grid-area: title; align-self: center; }
+  .bph-prep-detail-text { grid-area: text; }
+}

@@ -1,0 +1,327 @@
+/* Native sizes are supplied by the verified image registry's filename rules. */
+#app img[src*="/art/icons/"] {
+  --art-scale: 1;
+  width: calc(var(--art-native) * var(--art-scale));
+  height: calc(var(--art-native) * var(--art-scale));
+  max-width: none;
+  object-fit: contain;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+/* A disabled purchase dims its label and other artwork, not the currency. */
+#app button:disabled:has(img[src$="/coin-hud-pixels.webp"]) {
+  opacity: 1;
+  color: var(--wood);
+}
+#app button:disabled:has(img[src$="/coin-hud-pixels.webp"]) img:not([src$="/coin-hud-pixels.webp"]) {
+  opacity: .45;
+}
+
+#app .card-illustration img.pixel-picture,
+#app .skill-picture img.skill-shield,
+#app .wall-weapon img.wall-tile,
+#app .icon-button.big img[src*="/art/icons/"] {
+  --art-scale: 2;
+}
+
+#app #result-upgrade img[src*="/art/icons/"] {
+  --art-scale: 1;
+}
+
+#app .stars {
+  width: 72px;
+  height: 24px;
+  gap: 0;
+}
+
+#app .card-illustration:has(> .stars) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80px;
+  height: 88px;
+}
+
+#app .card-illustration > .stars {
+  left: 4px;
+}
+
+#app .strip {
+  --cell: 72px;
+  width: max-content;
+}
+
+#app .strip .cell {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 88px;
+}
+
+#app .strip .pic {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80px;
+  height: 88px;
+}
+
+@media (max-width: 479px) {
+  #app .strip > .cell:first-child,
+  #app .strip > .cell:last-child { display: none; }
+}
+
+#app img:is(
+  [src$="/flash.webp"],
+  [src$="/hourglass.webp"],
+  [src$="/skull.webp"],
+  [src$="/play.webp"],
+  [src$="/resume.webp"],
+  [src$="/gear.webp"],
+  [src$="/retry.webp"],
+  [src$="/up.webp"],
+  [src$="/skill-shield.webp"],
+  [src$="/plus.webp"],
+  [src$="/lock.webp"],
+  [src$="/back.webp"],
+  [src$="/heart.webp"],
+  [src$="/coin.webp"],
+  [src$="/star.webp"],
+  [src$="/star-empty.webp"],
+  [src$="/shield.webp"],
+  [src$="/sword.webp"],
+  [src$="/png-attack.webp"],
+  [src$="/png-guard.webp"],
+  [src$="/png-terrain_wall.webp"],
+  [src$="/boss-mark-arrow.webp"],
+  [src$="/boss-mark-melee.webp"],
+  [src$="/boss-mark-artillery.webp"],
+  [src$="/head-ring.webp"],
+  [src$="/hit-masks.webp"],
+  [src$="/ladder-effect.webp"],
+  [src$="/wall-hit-flash.webp"],
+  [src$="/coin-flight-disc.webp"],
+  [src$="/coin-hud-pixels.webp"],
+  [src$="/boss-cast-exclamation.webp"],
+  [src$="/bullet.webp"],
+  [src$="/flaming-arrow-tail.webp"],
+  [src$="/rocket-tails.webp"],
+  [src$="/shot-tracer.webp"],
+  [src$="/hit-spark-cross.webp"],
+  [src$="/gore-chips.webp"],
+  [src$="/hurt-chips.webp"],
+  [src$="/wall-debris.webp"],
+  [src$="/keep-debris.webp"],
+  [src$="/rain.webp"],
+  [src$="/boss-entry-veil.webp"],
+  [src$="/breach-mark.webp"],
+  [src$="/legacy-tiers.webp"],
+  [src$="/bph-node-check.webp"],
+  [src$="/wall-hwacha-attack.webp"],
+  [src$="/shield-charm.webp"],
+  [src$="/sword-charm.webp"],
+  [src$="/hit-masks-white.webp"],
+  [src$="/hit-masks-hurt.webp"],
+  [src$="/boss-entry-veil-fill.webp"],
+  [src$="/legacy-tiers-empty.webp"],
+  [src$="/head-ring-frame-00.webp"],
+  [src$="/head-ring-frame-01.webp"],
+  [src$="/head-ring-frame-02.webp"],
+  [src$="/head-ring-frame-03.webp"],
+  [src$="/head-ring-frame-04.webp"],
+  [src$="/head-ring-frame-05.webp"],
+  [src$="/head-ring-frame-06.webp"],
+  [src$="/head-ring-frame-07.webp"],
+  [src$="/head-ring-frame-08.webp"],
+  [src$="/head-ring-frame-09.webp"],
+  [src$="/head-ring-frame-10.webp"],
+  [src$="/head-ring-frame-11.webp"],
+  [src$="/head-ring-frame-12.webp"]
+) { --art-native: 24px; }
+
+#app img:is(
+  [src$="/motion.webp"],
+  [src$="/skill-shield-shard.webp"],
+  [src$="/touch.webp"],
+  [src$="/lang-ko.webp"],
+  [src$="/lang-en.webp"],
+  [src$="/home.webp"],
+  [src$="/infinity.webp"],
+  [src$="/trophy.webp"],
+  [src$="/sound.webp"],
+  [src$="/mute.webp"],
+  [src$="/merit.webp"],
+  [src$="/supply.webp"],
+  [src$="/unit-cap.webp"],
+  [src$="/reserve.webp"],
+  [src$="/reinforce.webp"],
+  [src$="/wall-archer.webp"],
+  [src$="/wall-hwacha.webp"],
+  [src$="/pierce.webp"],
+  [src$="/rift.webp"],
+  [src$="/jackpot.webp"],
+  [src$="/crossbow.webp"],
+  [src$="/rocket-cart.webp"],
+  [src$="/skill-up.webp"],
+  [src$="/card.webp"],
+  [src$="/png-terrain_fort.webp"],
+  [src$="/charge-ring-plate.webp"],
+  [src$="/charge-ring-portrait.webp"],
+  [src$="/charge-ring-urgent.webp"],
+  [src$="/tome-book-svg.webp"],
+  [src$="/yard-rack.webp"],
+  [src$="/yard-forge0.webp"],
+  [src$="/yard-forge1.webp"],
+  [src$="/yard-hall.webp"],
+  [src$="/yard-flag0.webp"],
+  [src$="/yard-flag1.webp"],
+  [src$="/personalize-lee_boknam.webp"],
+  [src$="/personalize-no_gaebang.webp"],
+  [src$="/personalize-lee_jeongheon.webp"],
+  [src$="/personalize-kim_huisu.webp"],
+  [src$="/personalize-song_bongsu.webp"],
+  [src$="/ladder-unit.webp"],
+  [src$="/wall-protection-glow.webp"],
+  [src$="/guard-sprite.webp"],
+  [src$="/enemy-cavalry-red.webp"],
+  [src$="/timber-frame.webp"],
+  [src$="/keep-flag.webp"],
+  [src$="/range-friendly.webp"],
+  [src$="/range-danger.webp"],
+  [src$="/broken-wall-patch.webp"],
+  [src$="/hp-base.webp"],
+  [src$="/base-danger-overlay.webp"],
+  [src$="/palisade-crosses.webp"],
+  [src$="/coin-hud-highlight.webp"],
+  [src$="/keep-cracks.webp"],
+  [src$="/hp-chief.webp"],
+  [src$="/hp-general-boss.webp"],
+  [src$="/revive-progress.webp"],
+  [src$="/hp-soldier.webp"],
+  [src$="/wall-critical-frame.webp"],
+  [src$="/xp-progress.webp"],
+  [src$="/skill-charge-fill.webp"],
+  [src$="/skill-ready-urgent-frenzy.webp"],
+  [src$="/result-bars.webp"],
+  [src$="/legacy-diagnosis-bars.webp"],
+  [src$="/start-load-progress.webp"],
+  [src$="/browser-load-progress.webp"],
+  [src$="/unread-card-dot.webp"],
+  [src$="/card-legend-frame.webp"],
+  [src$="/reward-selection-frame.webp"],
+  [src$="/legacy-synergy-pips.webp"],
+  [src$="/tree-ownership-state.webp"],
+  [src$="/bph-web-edges.webp"],
+  [src$="/bph-node-states.webp"],
+  [src$="/codex-foil-frame.webp"],
+  [src$="/codex-undiscovered-silhouette.webp"],
+  [src$="/purchase-ready-border.webp"],
+  [src$="/supply-grain.webp"],
+  [src$="/unit-cap-relic.webp"],
+  [src$="/star-mastery.webp"],
+  [src$="/star-fame.webp"],
+  [src$="/jackpot-foil.webp"],
+  [src$="/crossbow-charm.webp"],
+  [src$="/card-order.webp"],
+  [src$="/ladder-unit-1.webp"],
+  [src$="/hp-base-frame.webp"],
+  [src$="/hp-base-fill.webp"],
+  [src$="/hp-base-end.webp"],
+  [src$="/hp-base-fill-high.webp"],
+  [src$="/hp-base-fill-warning.webp"],
+  [src$="/hp-base-fill-critical.webp"],
+  [src$="/hp-chief-frame.webp"],
+  [src$="/hp-chief-fill.webp"],
+  [src$="/hp-chief-end.webp"],
+  [src$="/hp-general-boss-frame.webp"],
+  [src$="/hp-general-boss-fill.webp"],
+  [src$="/hp-general-boss-end.webp"],
+  [src$="/hp-general-boss-fill-ally.webp"],
+  [src$="/hp-general-boss-fill-enemy.webp"],
+  [src$="/revive-progress-frame.webp"],
+  [src$="/revive-progress-fill.webp"],
+  [src$="/revive-progress-end.webp"],
+  [src$="/hp-soldier-frame.webp"],
+  [src$="/hp-soldier-fill.webp"],
+  [src$="/hp-soldier-end.webp"],
+  [src$="/xp-progress-frame.webp"],
+  [src$="/xp-progress-fill.webp"],
+  [src$="/xp-progress-end.webp"],
+  [src$="/skill-charge-fill-rim.webp"],
+  [src$="/skill-charge-fill-fill.webp"],
+  [src$="/skill-ready-urgent-frenzy-ready.webp"],
+  [src$="/skill-ready-urgent-frenzy-urgent.webp"],
+  [src$="/skill-ready-urgent-frenzy-frenzy.webp"],
+  [src$="/result-bars-frame.webp"],
+  [src$="/result-bars-fill.webp"],
+  [src$="/result-bars-end.webp"],
+  [src$="/result-bars-fill-merit.webp"],
+  [src$="/result-bars-fill-unlock.webp"],
+  [src$="/legacy-diagnosis-bars-frame.webp"],
+  [src$="/legacy-diagnosis-bars-fill.webp"],
+  [src$="/legacy-diagnosis-bars-end.webp"],
+  [src$="/legacy-diagnosis-bars-fill-record.webp"],
+  [src$="/legacy-diagnosis-bars-fill-damage.webp"],
+  [src$="/legacy-diagnosis-bars-fill-defense.webp"],
+  [src$="/legacy-diagnosis-bars-fill-strategy.webp"],
+  [src$="/start-load-progress-frame.webp"],
+  [src$="/start-load-progress-fill.webp"],
+  [src$="/start-load-progress-end.webp"],
+  [src$="/browser-load-progress-frame.webp"],
+  [src$="/browser-load-progress-fill.webp"],
+  [src$="/browser-load-progress-end.webp"],
+  [src$="/legacy-synergy-pips-off.webp"],
+  [src$="/tree-ownership-state-owned.webp"],
+  [src$="/tree-ownership-state-available.webp"],
+  [src$="/tree-ownership-state-locked.webp"],
+  [src$="/tree-ownership-state-selected.webp"],
+  [src$="/bph-node-states-owned.webp"],
+  [src$="/bph-node-states-available.webp"],
+  [src$="/bph-node-states-locked.webp"],
+  [src$="/bph-node-states-selected.webp"],
+  [src$="/purchase-ready-border-bright.webp"],
+  [src$="/purchase-ready-border-dim.webp"],
+  [src$="/charge-ring-plate-frame-00.webp"],
+  [src$="/charge-ring-plate-frame-01.webp"],
+  [src$="/charge-ring-plate-frame-02.webp"],
+  [src$="/charge-ring-plate-frame-03.webp"],
+  [src$="/charge-ring-plate-frame-04.webp"],
+  [src$="/charge-ring-plate-frame-05.webp"],
+  [src$="/charge-ring-plate-frame-06.webp"],
+  [src$="/charge-ring-plate-frame-07.webp"],
+  [src$="/charge-ring-plate-frame-08.webp"],
+  [src$="/charge-ring-plate-frame-09.webp"],
+  [src$="/charge-ring-plate-frame-10.webp"],
+  [src$="/charge-ring-plate-frame-11.webp"],
+  [src$="/charge-ring-plate-frame-12.webp"],
+  [src$="/charge-ring-portrait-frame-00.webp"],
+  [src$="/charge-ring-portrait-frame-01.webp"],
+  [src$="/charge-ring-portrait-frame-02.webp"],
+  [src$="/charge-ring-portrait-frame-03.webp"],
+  [src$="/charge-ring-portrait-frame-04.webp"],
+  [src$="/charge-ring-portrait-frame-05.webp"],
+  [src$="/charge-ring-portrait-frame-06.webp"],
+  [src$="/charge-ring-portrait-frame-07.webp"],
+  [src$="/charge-ring-portrait-frame-08.webp"],
+  [src$="/charge-ring-portrait-frame-09.webp"],
+  [src$="/charge-ring-portrait-frame-10.webp"],
+  [src$="/charge-ring-portrait-frame-11.webp"],
+  [src$="/charge-ring-portrait-frame-12.webp"],
+  [src$="/charge-ring-urgent-frame-00.webp"],
+  [src$="/charge-ring-urgent-frame-01.webp"],
+  [src$="/charge-ring-urgent-frame-02.webp"],
+  [src$="/charge-ring-urgent-frame-03.webp"],
+  [src$="/charge-ring-urgent-frame-04.webp"],
+  [src$="/charge-ring-urgent-frame-05.webp"],
+  [src$="/charge-ring-urgent-frame-06.webp"],
+  [src$="/charge-ring-urgent-frame-07.webp"],
+  [src$="/charge-ring-urgent-frame-08.webp"],
+  [src$="/charge-ring-urgent-frame-09.webp"],
+  [src$="/charge-ring-urgent-frame-10.webp"],
+  [src$="/charge-ring-urgent-frame-11.webp"],
+  [src$="/charge-ring-urgent-frame-12.webp"],
+  [src$="/wall-protection-fill.webp"],
+  [src$="/keep-cracks-stage-1.webp"],
+  [src$="/keep-cracks-stage-2.webp"],
+  [src$="/keep-cracks-stage-3.webp"]
+) { --art-native: 32px; }

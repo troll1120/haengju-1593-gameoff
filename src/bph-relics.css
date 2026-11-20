@@ -1,0 +1,69 @@
+/* Relic paintings and thematic icons share one contained 32px face; corner badges keep their own size. */
+#app img[src*="/art/relics/"],
+#app .bph-relic-face > img:not(.bph-relic-tag),
+#app .bph-relic-slot > img { width: 32px; height: 32px; min-width: 32px; max-width: none; flex-shrink: 0; object-fit: contain; image-rendering: pixelated; }
+
+/* The relic tab is a .bph-web panel: it takes the upgrade web's paper, type, tile frames and the side slot's height,
+   stacked as the slot row, the relic list and one status line at every width. */
+.bph-web.bph-relics { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; }
+.bph-web.bph-relics .bph-web-node { position: relative; flex: none; }
+.bph-relic-slots { display: flex; flex-wrap: wrap; align-items: center; gap: var(--bph-gap) var(--space-3); padding: var(--bph-gap) var(--bph-pad); border-bottom: var(--hair) solid var(--bph-line); }
+.bph-relic-count { font-size: var(--type-fine); white-space: nowrap; }
+.bph-relic-slot-row { display: flex; flex-wrap: wrap; gap: var(--bph-gap); }
+.bph-relic-hint { flex-basis: 100%; font-size: var(--type-fine); line-height: 1.25; color: var(--bph-line); }
+/* The timing note moves to the next line whole instead of leaving one word behind. */
+.bph-relic-note { white-space: nowrap; }
+.bph-relic-list {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); grid-auto-rows: max-content; align-content: start; gap: var(--bph-gap);
+  min-height: 0; overflow: auto; overscroll-behavior: contain; padding: var(--bph-gap) var(--bph-pad);
+  background: var(--bph-light);
+}
+.bph-web .bph-relic-card {
+  display: grid; grid-template-columns: var(--bph-tap) minmax(0, 1fr) auto; align-items: center; gap: var(--bph-gap);
+  min-width: 0; padding: var(--bph-gap); text-align: start; background: var(--bph-paper);
+}
+/* Gold marks a worn relic, so the touch hover a tap leaves behind keeps the card's own face. */
+.bph-web .bph-relic-card:hover { background: var(--bph-paper); color: var(--bph-ink); }
+@media (hover: hover) { .bph-web .bph-relic-card:not([aria-pressed="true"]):hover { background: color-mix(in srgb, var(--bph-gold) 20%, var(--bph-paper)); } }
+.bph-web .bph-relic-card[aria-pressed="true"] { background: color-mix(in srgb, var(--bph-gold) 45%, var(--bph-paper)); border-color: var(--bph-ink); }
+.bph-relic-copy { display: grid; gap: var(--space-1); min-width: 0; }
+.bph-relic-copy strong { line-height: 1.25; word-break: keep-all; overflow-wrap: anywhere; }
+.bph-relic-copy span { font-size: var(--type-fine); line-height: 1.25; word-break: keep-all; overflow-wrap: anywhere; }
+.bph-relic-state { font-size: var(--type-fine); font-weight: 700; white-space: nowrap; color: var(--bph-accent); }
+.bph-relic-mystery {
+  display: flex; align-items: center; justify-content: space-between; min-height: 52px;
+  padding: 4px 8px; color: var(--wood); border: var(--line) solid var(--wood-pale); background: var(--paper-shade);
+}
+.bph-relic-mystery > img { width: 40px; height: 40px; object-fit: contain; filter: brightness(0); }
+.bph-relics .bph-relic-claim { color: var(--cream); border: var(--line) solid var(--wood-dark); background: var(--red-deep); }
+.bph-relic-empty { grid-column: 1 / -1; display: grid; justify-items: center; gap: var(--space-2); padding: var(--space-6) var(--bph-pad); text-align: center; color: var(--bph-line); }
+#app .bph-relic-empty img[src*="/art/icons/"] { --art-scale: 2; opacity: .65; }
+.bph-relic-empty strong { color: var(--bph-ink); }
+.bph-relic-empty p { max-width: 32ch; font-size: var(--type-fine); line-height: 1.4; }
+.bph-relic-status { padding: var(--bph-gap) var(--bph-pad) var(--bph-sheet-end); border-top: var(--hair) solid var(--bph-line); font-size: var(--type-fine); line-height: 1.25; }
+
+/* Short frames scroll the whole tab so the slot hint cannot squeeze the card targets away. */
+@media (max-height: 650px) {
+  .bph-web.bph-relics {
+    display: block; overflow-y: auto; overscroll-behavior: contain;
+  }
+  .bph-relic-list { overflow: visible; }
+}
+
+/* The new-relic notice hangs at the top of the play column, above any panel. It is never shown during a battle. */
+.bph-relic-toast {
+  position: absolute; z-index: 15; top: max(var(--space-2), env(safe-area-inset-top)); left: 0; right: 0; margin-inline: auto;
+  width: min(calc(100% - var(--space-4)), var(--column));
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-2) var(--space-3);
+  padding: var(--space-2) var(--space-3); color: var(--cream); background: var(--night);
+  border: var(--line) solid var(--gold); box-shadow: 0 var(--space-1) var(--space-3) var(--cast-deep);
+  cursor: pointer; animation: deal var(--ui-open) var(--ui-ease) both;
+}
+.bph-relic-toast-art { display: flex; }
+.bph-relic-toast-art img { width: var(--sprite); height: var(--sprite); }
+.bph-relic-toast-copy { display: grid; min-width: 0; line-height: 1.3; }
+.bph-relic-toast-copy strong { font-weight: 400; color: var(--gold-light); }
+.bph-relic-toast-copy span { font-size: var(--type-fine); overflow-wrap: anywhere; word-break: keep-all; }
+.bph-relic-toast .bph-relic-toast-go { padding: var(--space-1) var(--space-3); font-size: var(--type-fine); white-space: nowrap; }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-relic-toast { animation: ui-fade-in var(--ui-close) ease-out both; }
+@media (prefers-reduced-motion: reduce) { .bph-relic-toast { animation: ui-fade-in var(--ui-close) ease-out both; } }

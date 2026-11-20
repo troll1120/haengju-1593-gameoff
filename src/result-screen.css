@@ -1,0 +1,22 @@
+/* One stationary card replaces its contents; no motion in either preference mode. */
+.result-unlock-modal {
+  position: fixed; inset: 0; margin: auto;
+  width: min(calc(100% - var(--space-6)), 360px);
+  max-height: calc(100dvh - var(--space-6)); overflow: auto;
+  padding: var(--space-5); text-align: center;
+  color: var(--ink); background: var(--hanji); font-family: var(--font);
+}
+.result-unlock-modal::backdrop { background: var(--veil); }
+.result-unlock-modal > div { display: grid; justify-items: center; gap: var(--space-3); }
+.result-unlock-modal img { width: var(--face-big); height: var(--face-big); object-fit: contain; }
+.result-unlock-modal h2 { margin: 0; font-size: var(--type-label); font-weight: 400; }
+.result-unlock-modal p { margin: 0; font-size: var(--type-fine); line-height: 1.5; }
+.result-unlock-modal h2, .result-unlock-modal p { word-break: keep-all; overflow-wrap: anywhere; }
+#result-unlock-counter { font-variant-numeric: tabular-nums; }
+.result-unlock-modal .menu-button {
+  width: 100%; min-height: var(--tap); margin: var(--space-5) 0 0;
+  font-size: var(--type-fine);
+}
+.result-unlock-modal button:focus-visible { outline-color: var(--red-deep); }
+.result-unlock-modal button:hover { filter: brightness(1.08); }
+.result-unlock-modal, .result-unlock-modal * { animation: none; transition: none; }

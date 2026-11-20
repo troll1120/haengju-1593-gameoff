@@ -1,0 +1,32 @@
+.prep-tree { width: 100%; min-width: 0; box-sizing: border-box; padding: 8px 0; }
+.prep-tree-board {
+  position: relative; width: 100%; max-width: 480px; margin-inline: auto;
+  /* Allow four columns on narrow phones while preserving 44px targets and 10px gutters. */
+  min-width: calc(var(--columns, 0) * (44px + 10px));
+}
+.prep-tree-board > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.prep-tree-board path { fill: none; stroke: var(--wood); stroke-opacity: .32; stroke-width: 1.75; vector-effect: non-scaling-stroke; }
+.prep-tree-board path[data-unlocked="true"] { stroke: #b26914; stroke-width: 2.5; stroke-opacity: 1; }
+.prep-tree .prep-tree-node {
+  box-sizing: border-box; position: absolute; transform: translateX(-50%); width: calc(100% / var(--columns) - 10px);
+  min-width: 0; max-width: 116px; margin: 0; padding: 2px 3px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+  font: inherit; color: var(--ink); background: var(--paper-light); border: 2px solid var(--wood);
+  border-radius: 3px; text-align: center;
+}
+.prep-tree button.prep-tree-node { cursor: pointer; }
+.prep-tree .prep-tree-node:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; z-index: 1; }
+.prep-tree-node[data-dim="true"] { background: var(--paper-shade); border-color: var(--wood-pale); }
+.prep-tree-node[data-dim="true"] .prep-tree-art { filter: grayscale(.85); opacity: .65; }
+.prep-tree-node[data-concealed="true"] .prep-tree-art { filter: brightness(0); opacity: 1; }
+.prep-tree .prep-tree-node[data-pack] { background: var(--paper); border-width: 1px; }
+.prep-tree-label {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  max-width: 100%; font-size: 13px; font-weight: 700; line-height: 1.15; word-break: keep-all; overflow-wrap: anywhere;
+}
+.prep-tree-art { display: grid; place-items: center; overflow: hidden; width: 34px; height: 32px; flex: none; }
+#app .prep-tree-art > img { display: block; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+#app .prep-tree-art[data-sheet] { display: block; width: 32px; }
+#app .prep-tree-art[data-sheet="unit"] > img { max-width: none; width: 200%; object-fit: fill; }
+#app .prep-tree-art[data-sheet="ship"] > img { max-width: none; width: 1400%; height: 300%; margin-top: -200%; object-fit: fill; }
+.prep-tree-art .bph-codex-art { --art: 32px; --art-height: 32px; }

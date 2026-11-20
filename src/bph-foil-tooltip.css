@@ -1,0 +1,11 @@
+/* The first-foil hint toast hangs at the top of the play column over the running battle, like the relic notice. */
+.bph-foil-tooltip {
+  position: absolute; z-index: 15; top: calc(max(var(--space-2), env(safe-area-inset-top)) + var(--tap) + var(--space-2)); left: 0; right: 0; margin-inline: auto;
+  width: max-content; max-width: min(calc(100% - var(--space-4)), var(--column));
+  display: grid; justify-items: center; gap: var(--space-1); padding: var(--space-2) var(--space-3);
+  color: var(--cream); background: var(--night); border: var(--line) solid var(--gold); box-shadow: 0 var(--space-1) var(--space-3) var(--cast-deep);
+  font-size: 16px; line-height: 1.3; text-align: center; pointer-events: auto; cursor: pointer; animation: deal var(--ui-open) var(--ui-ease) both;
+}
+.bph-foil-tooltip strong { font-weight: 400; color: var(--gold-light); }
+:root:has(#toggle-motion[aria-pressed="true"]) .bph-foil-tooltip { animation: ui-fade-in var(--ui-close) ease-out both; }
+@media (prefers-reduced-motion: reduce) { .bph-foil-tooltip { animation: ui-fade-in var(--ui-close) ease-out both; } }

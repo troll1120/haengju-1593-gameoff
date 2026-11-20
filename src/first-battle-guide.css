@@ -1,0 +1,21 @@
+.first-battle-guide {
+  width: min(calc(100% - var(--space-6)), 480px);
+  max-height: calc(100dvh - var(--space-6));
+  margin: auto;
+  padding: var(--space-5);
+  overflow: auto;
+  color: var(--ink);
+  font-family: var(--font);
+  background: var(--hanji);
+}
+.first-battle-guide::backdrop { background: var(--veil); }
+.first-battle-guide > img { width: var(--tap); height: var(--tap); }
+.first-battle-guide h2 { margin: var(--space-2) 0 var(--space-4); font-size: var(--type-label); font-weight: 400; }
+.first-battle-guide p { font-size: var(--type-fine); line-height: 1.6; word-break: keep-all; overflow-wrap: break-word; }
+.first-guide-progress { margin: 0 0 var(--space-4); }
+.first-guide-actions { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-5); }
+.first-guide-actions .menu-button { width: 100%; min-height: var(--tap); margin: 0; font-size: var(--type-fine); }
+.first-guide-actions button:focus-visible { outline-color: var(--red-deep); }
+.first-guide-actions button:hover { filter: brightness(1.08); }
+/* The guide has no motion, including when system or saved motion is disabled. */
+.first-battle-guide, .first-battle-guide * { animation: none; transition: none; }

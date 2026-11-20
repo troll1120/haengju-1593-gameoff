@@ -1,0 +1,55 @@
+/* Hanji pixel skin (A). An override layer: it repaints panels and buttons and never moves a box. Every frame is a 9-slice
+   drawn inside the element's own border box (outset 0) at two screen pixels per art pixel. Clearing data-skin on <html>
+   restores the unskinned look. */
+:root {
+  --skin-window: url("./assets/ui-skin/window-filled.png"); --skin-window-cut: 10 fill / 20px / 0 repeat;
+  --skin-button: url("./assets/ui-skin/button-normal.png"); --skin-button-primary: url("./assets/ui-skin/button-primary.png");
+  --skin-button-active: url("./assets/ui-skin/button-active.png"); --skin-button-disabled: url("./assets/ui-skin/button-disabled.png");
+  --skin-button-cut: 8 fill / 16px / 0 stretch;
+}
+/* Result, pause, the first-battle guide and sortie, which also hosts the upgrade web, are the panels. */
+[data-skin="hanji"] .wood-frame { border-image: var(--skin-window) var(--skin-window-cut); }
+/* The title menu and the buttons inside those panels. */
+[data-skin="hanji"] .menu-button:not(.wood-frame),
+[data-skin="hanji"] .panel .icon-button,
+[data-skin="hanji"] .bph-web .bph-web-node { border-image: var(--skin-button) var(--skin-button-cut); }
+[data-skin="hanji"] .panel .icon-button[aria-pressed="true"] { border-image-source: var(--skin-button-active); }
+[data-skin="hanji"] .menu-button.primary:not(.wood-frame),
+[data-skin="hanji"] #resume,
+[data-skin="hanji"] .bph-web .bph-web-buy { border-image: var(--skin-button-primary) var(--skin-button-cut); }
+[data-skin="hanji"] .bph-web .bph-web-buy { color: var(--cream); }
+[data-skin="hanji"] .bph-web .bph-web-buy:is(:disabled, [aria-disabled="true"]) { border-image-source: var(--skin-button-disabled); color: var(--ink); }
+/* A piece carries its own face and edge, so the painted background and the soft shadow under it come off. */
+[data-skin="hanji"] .wood-frame,
+[data-skin="hanji"] .menu-button,
+[data-skin="hanji"] .menu-button.primary,
+[data-skin="hanji"] .panel .icon-button,
+[data-skin="hanji"] .bph-web .bph-web-node,
+[data-skin="hanji"] #resume,
+[data-skin="hanji"] .bph-web .bph-web-buy,
+[data-skin="hanji"] .bph-web .bph-web-buy:disabled { background: none; box-shadow: none; image-rendering: pixelated; }
+/* Wooden buttons carry the panel piece, whose parchment face needs ink-coloured words. */
+[data-skin="hanji"] .menu-button.wood-frame { color: var(--ink); text-shadow: none; }
+
+/* Title controls share the mastery frame while keeping their icon slots and corner badge; the padding stands where the unskinned border was, so no box moves. */
+[data-skin="hanji"] .title-menu > .menu-button {
+  padding: var(--space-1) 0; color: var(--cream); text-shadow: var(--outline);
+}
+/* Equal picture slots keep the three labels on one baseline, independent of native art sizes. A slot is one sprite wide, the grid the tent and the book are drawn on, so both show every pixel at the drawn size. */
+#app .title-menu .camp,
+#app .title-menu .camp > img,
+#app .title-menu > .menu-button:not(.primary) > img:not(.rise):not(.pip) {
+  width: var(--sprite); height: var(--sprite); object-fit: contain;
+}
+/* The start flag keeps its native size, counted in menu units. */
+#app .title-menu > .menu-button.primary > img { width: var(--space-5); height: var(--space-5); }
+#app .title-menu .camp > img { object-fit: cover; object-position: bottom; }
+#app .title-menu .menu-button > .rise {
+  position: absolute; top: var(--space-1); right: var(--space-1);
+  width: var(--space-5); height: var(--space-5); display: none;
+}
+#app .title-menu .menu-button.ready > .rise { display: block; }
+
+/* button-tile.png is button-normal's top half over its mirror: four equal edges, brass rivets and plank fill,
+   with no lower button lip, drawn at two screen pixels per art pixel like every other piece. */
+[data-skin="hanji"] .tile-frame { border: 0; border-image: url("./assets/ui-skin/button-tile.png") 8 fill / 16px / 0 stretch; background: none; box-shadow: none; }
