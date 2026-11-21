@@ -67,3 +67,9 @@
 - 로컬 서버는 `CASTLE_REVIEW=1 CASTLE_PORT=<포트> bun scripts/serve.ts`입니다. `127.0.0.1`에서만 수신합니다. 비공개 링크로 띄울 때는 3단계와 같이 `CASTLE_PREVIEW_KEY`를 함께 줍니다.
 - `?seed=<숫자>`로 같은 판을 다시 만들 수 있습니다. 배속은 없고 항상 1배속입니다.
 - 이 폴더의 상위에 `app/`(원본 그림과 의존성)과 `tools/`(타격 프레임 원본)가 있어야 그림 대조 검사가 돕니다.
+
+## 라이선스
+
+Copyright (c) 2026 BUGHOLE. All rights reserved.
+
+이 저장소는 Game Off 2026 제출을 위해 소스를 공개한 것입니다. 별도 허가 없이 코드·그림·소리를 복제·수정·재배포할 수 없습니다.
