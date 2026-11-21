@@ -36,3 +36,9 @@ bun run build   # type check and production build into dist/
 ```
 
 Korean notes: [README.ko.md](README.ko.md)
+
+## License
+
+Copyright (c) 2026 BUGHOLE. All rights reserved.
+
+The source is public for the Game Off 2026 submission. No permission is granted to copy, modify or redistribute the code, art or audio without written permission.
